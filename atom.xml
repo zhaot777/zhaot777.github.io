@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Steven&#39;s Blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://zhaot777.github.io/"/>
+  <updated>2016-03-03T08:51:12.588Z</updated>
+  <id>http://zhaot777.github.io/</id>
+  
+  <author>
+    <name>Steven Zhao</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web Crawler</title>
+    <link href="http://zhaot777.github.io/2016/03/01/webcrawler/"/>
+    <id>http://zhaot777.github.io/2016/03/01/webcrawler/</id>
+    <published>2016-03-01T11:16:42.366Z</published>
+    <updated>2016-03-03T08:51:12.588Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;blockquote&gt;
+&lt;font size=&quot;2&quot;&gt;&lt;p&gt;A &lt;strong&gt;Web crawler&lt;/strong&gt; starts with a list of URLs to visit, called the seeds. As the crawler visits these URLs, it identifies all the hyperlinks in the page and adds them to the list of URLs to visit, called the crawl frontier. URLs from the frontier are recursively visited according to a set of policies. If the crawler is performing archiving of websites it copies and saves the information as it goes. The archives are usually stored in such a way they can be viewed, read and navigated as they were on the live web, but are preserved as ‘snapshots’.- &lt;a href=&quot;https://en.wikipedia.org/wiki/Web_crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wikipedia&lt;/a&gt;&lt;/p&gt;&lt;/font&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;We can start from one seed page to search all the URLs with finite depth that we can get, then rank them in order, and give us the best choose or a rank list. And this is what the project does.&lt;br&gt;&lt;/p&gt;
+
+
+&lt;h3 id=&quot;Project&quot;&gt;&lt;a href=&quot;#Project&quot; class=&quot;headerlink&quot; title=&quot;Project&quot;&gt;&lt;/a&gt;Project&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;For this project, Our goal is base on the keyword from input we return a list of URLs, that all of them contain the keyword and the most popular URL rank at the top.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;We can divide the problem to several parts:&lt;/p&gt;
+&lt;font size=&quot;2&quot;&gt;&lt;ol&gt;&lt;br&gt;&lt;li&gt;Get all the content from one page, we can use these content to find URLs and matched keyword&lt;/li&gt;&lt;br&gt;&lt;li&gt;Get all URLs from one page’s content&lt;/li&gt;&lt;br&gt;&lt;li&gt;Store all URLs that contain the keyword to a hash table from pages’ content&lt;/li&gt;&lt;br&gt;&lt;li&gt;Get a map of one page’s URL to all URLs that this page content, we can use this to rank our order&lt;/li&gt;&lt;br&gt;&lt;li&gt;Give as the rank list by using sorting algorithm&lt;/li&gt;&lt;br&gt;&lt;/ol&gt;&lt;/font&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zhaot777/PythonWebCrawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github code link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Summary&quot;&gt;&lt;a href=&quot;#Summary&quot; class=&quot;headerlink&quot; title=&quot;Summary&quot;&gt;&lt;/a&gt;Summary&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt; This project is a just implement a simple function to get the URLs from a seed page.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt; It is base on the given input cache, which is a dictionary that stores all the URLs and maps content.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;In fact, we can use Scrapy to help us to build a web crawler easier rather than write by ourselves.&lt;/p&gt;
+&lt;h3 id=&quot;More-about-Web-Crawler&quot;&gt;&lt;a href=&quot;#More-about-Web-Crawler&quot; class=&quot;headerlink&quot; title=&quot;More about Web Crawler&quot;&gt;&lt;/a&gt;More about Web Crawler&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Scrapy is a free and open source web crawling framework written in Python. Originally designed for web scraping, it can also be used to extract data using APIs or as a general purpose web crawler.  &lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt; If there are large scare of output, we can use this tool crawling content and store in MongoDB.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt; Next time I will use Scrapy and MongoDB to implement the web crawler.&lt;/p&gt;
+&lt;!-- Go to www.addthis.com/dashboard to customize your tools --&gt;
+&lt;div class=&quot;addthis_sharing_toolbox&quot;&gt;&lt;/div&gt;
+</content>
+    
+    <summary type="html">
+    
+      Web Crawler is a metasearch engine that blends the top search results. For this project, I wrote a web crawler by using Python, which can give us an order list of URLs of pages.
+    
+    </summary>
+    
+      <category term="Project" scheme="http://zhaot777.github.io/categories/Project/"/>
+    
+    
+      <category term="Python" scheme="http://zhaot777.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Percolation Theory</title>
+    <link href="http://zhaot777.github.io/2016/02/21/percolation/"/>
+    <id>http://zhaot777.github.io/2016/02/21/percolation/</id>
+    <published>2016-02-21T17:25:41.383Z</published>
+    <updated>2016-03-03T08:51:01.711Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;blockquote&gt;
+&lt;font size=&quot;2&quot;&gt;In statistical physics and mathematics, percolation theory describes the behavior of connected clusters in a random graph. The applications of percolation theory to materials science and other domains are discussed in the article percolation. - &lt;a href=&quot;https://en.wikipedia.org/wiki/Percolation_theory&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wikipedia&lt;/a&gt;&lt;/font&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;Percolation model can be used in  many situations: It can represent how gas go through to the surface or how to find whether 2 people have connection in a social network. We can use union-find algorithm to build the connection.&lt;/p&gt;
+&lt;h3 id=&quot;Union-Find&quot;&gt;&lt;a href=&quot;#Union-Find&quot; class=&quot;headerlink&quot; title=&quot;Union Find&quot;&gt;&lt;/a&gt;Union Find&lt;/h3&gt;&lt;blockquote&gt;
+&lt;font size=&quot;2&quot;&gt;Union Find is an algorithm which uses a disjoint-set data structure to solve the following problem: Say we have some number of items. We are allowed to merge any two items to consider them equal (where equality here obeys all of the properties of an Equivalence Relation). At any point, we are allowed to ask whether two items are considered equal or not. - &lt;a href=&quot;http://www.algorithmist.com/index.php/Union_Find&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;algorithmist&lt;/a&gt;&lt;/font&gt;
+
+
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;font size=&quot;1&quot;&gt;  Algorithm &lt;/font&gt;&lt;/th&gt;
+&lt;th&gt;&lt;font size=&quot;1&quot;&gt;  Time Complexity  &lt;/font&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;font size=&quot;1&quot;&gt; Quick find &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  M N &lt;/font&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;font size=&quot;1&quot;&gt; Quick union &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;1&quot;&gt;M N &lt;/font&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;font size=&quot;1&quot;&gt; weighted QU&lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;1&quot;&gt;N + M log n &lt;/font&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;font size=&quot;1&quot;&gt; weighted QU + path compression&lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;1&quot;&gt; N + M lg* N &lt;/font&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;font size=&quot;1&quot;&gt;&lt;strong&gt;*M union-find operations on a set of N objects&lt;/strong&gt;&lt;/font&gt;
+
+
+&lt;h3 id=&quot;Project&quot;&gt;&lt;a href=&quot;#Project&quot; class=&quot;headerlink&quot; title=&quot;Project&quot;&gt;&lt;/a&gt;Project&lt;/h3&gt;&lt;p&gt;For this project, we use a N by N grid to represent the percolation model, at beginning all the sites of the grid is blocked, we randomly open the sites until we the system is be percolated.&lt;/p&gt;
+&lt;p&gt;The goal of this project is to implement 2 class:&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Percolation&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Percolation&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; N)&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;// create N-by-N grid, with all sites blocked&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j)&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;// open site if it is not open already&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isOpen&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j)&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;// is site (row i, column j) open?&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isFull&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j)&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;// is site (row i, column j) full?&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;percolates&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;   &lt;span class=&quot;comment&quot;&gt;// does the system percolate?&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;// test client (optional)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; class PercolationStats &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;PercolationStats&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; N, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; T)&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;// perform T independent experiments on an N-by-N grid&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;// sample mean of percolation threshold&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;stddev&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;// sample standard deviation of percolation threshold&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;confidenceLo&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;   &lt;span class=&quot;comment&quot;&gt;// low  endpoint of 95% confidence interval&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;confidenceHi&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;   &lt;span class=&quot;comment&quot;&gt;// high endpoint of 95% confidence interval&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;// test client (described below)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The first class is to simulate the percolation model, We need to open certain site and give sites’ condition.&lt;/p&gt;
+&lt;p&gt;The second is to estimate the value of the percolation threshold via &lt;strong&gt;Monte Carlo simulation&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;font size=&quot;1&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt;&lt;br&gt; 1. The way to reduce time complexity  is to create 2 &lt;strong&gt;virtual nodes&lt;/strong&gt;, one is the top and one is the bottom.&lt;br&gt; 2. We need to consider how to avoid the backwash problem. The easy way to solve this problem is to use 2 union-find object to trace &lt;code&gt;all sites + 2 virtual nodes&lt;/code&gt; and &lt;code&gt;all sites + the top virtual node&lt;/code&gt;.&lt;/font&gt;
+
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://coursera.cs.princeton.edu/algs4/assignments/percolation.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;project detail discription&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/zhaot777/algs4_Percolation.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github code link&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- Go to www.addthis.com/dashboard to customize your tools --&gt;
+&lt;div class=&quot;addthis_sharing_toolbox&quot;&gt;&lt;/div&gt;
+</content>
+    
+    <summary type="html">
+    
+      For this project, we use a N by N grid to represent the percolation model, at beginning all the sites of the grid is blocked, we randomly open the sites until we the system is be percolated.
+    
+    </summary>
+    
+      <category term="Project" scheme="http://zhaot777.github.io/categories/Project/"/>
+    
+    
+      <category term="union-find" scheme="http://zhaot777.github.io/tags/union-find/"/>
+    
+  </entry>
+  
+</feed>
