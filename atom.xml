@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhaot777.github.io/"/>
-  <updated>2016-03-18T08:25:43.433Z</updated>
+  <updated>2016-03-18T08:32:49.583Z</updated>
   <id>http://zhaot777.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Angular.js practice - to do list demo</title>
+    <title>To Do List Demo</title>
     <link href="http://zhaot777.github.io/2016/03/18/todolist/"/>
     <id>http://zhaot777.github.io/2016/03/18/todolist/</id>
     <published>2016-03-18T08:17:14.614Z</published>
-    <updated>2016-03-18T08:25:43.433Z</updated>
+    <updated>2016-03-18T08:32:49.583Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;blockquote&gt;
 &lt;font size=&quot;2&quot;&gt;&lt;p&gt;A &lt;strong&gt;Web crawler&lt;/strong&gt; starts with a list of URLs to visit, called the seeds. As the crawler visits these URLs, it identifies all the hyperlinks in the page and adds them to the list of URLs to visit, called the crawl frontier. URLs from the frontier are recursively visited according to a set of policies. If the crawler is performing archiving of websites it copies and saves the information as it goes. The archives are usually stored in such a way they can be viewed, read and navigated as they were on the live web, but are preserved as ‘snapshots’.- &lt;a href=&quot;https://en.wikipedia.org/wiki/Web_crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wikipedia&lt;/a&gt;&lt;/p&gt;&lt;/font&gt;
@@ -49,7 +49,7 @@
     
     <summary type="html">
     
-      Web Crawler is a metasearch engine that blends the top search results. For this project, I wrote a web crawler by using Python, which can give us an order list of URLs of pages.
+      This demo is a practice work for familiarizing Angular.js. The todo list can add new tasks, delete tasks and change the tasks condition from doing to done.
     
     </summary>
     
