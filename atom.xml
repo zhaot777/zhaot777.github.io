@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhaot777.github.io/"/>
-  <updated>2016-03-03T08:51:12.588Z</updated>
+  <updated>2016-03-18T08:25:43.433Z</updated>
   <id>http://zhaot777.github.io/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Angular.js practice - to do list demo</title>
+    <link href="http://zhaot777.github.io/2016/03/18/todolist/"/>
+    <id>http://zhaot777.github.io/2016/03/18/todolist/</id>
+    <published>2016-03-18T08:17:14.614Z</published>
+    <updated>2016-03-18T08:25:43.433Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;blockquote&gt;
+&lt;font size=&quot;2&quot;&gt;&lt;p&gt;A &lt;strong&gt;Web crawler&lt;/strong&gt; starts with a list of URLs to visit, called the seeds. As the crawler visits these URLs, it identifies all the hyperlinks in the page and adds them to the list of URLs to visit, called the crawl frontier. URLs from the frontier are recursively visited according to a set of policies. If the crawler is performing archiving of websites it copies and saves the information as it goes. The archives are usually stored in such a way they can be viewed, read and navigated as they were on the live web, but are preserved as ‘snapshots’.- &lt;a href=&quot;https://en.wikipedia.org/wiki/Web_crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wikipedia&lt;/a&gt;&lt;/p&gt;&lt;/font&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;We can start from one seed page to search all the URLs with finite depth that we can get, then rank them in order, and give us the best choose or a rank list. And this is what the project does.&lt;br&gt;&lt;/p&gt;
+
+
+&lt;h3 id=&quot;Project&quot;&gt;&lt;a href=&quot;#Project&quot; class=&quot;headerlink&quot; title=&quot;Project&quot;&gt;&lt;/a&gt;Project&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;For this project, Our goal is base on the keyword from input we return a list of URLs, that all of them contain the keyword and the most popular URL rank at the top.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;We can divide the problem to several parts:&lt;/p&gt;
+&lt;font size=&quot;2&quot;&gt;&lt;ol&gt;&lt;br&gt;&lt;li&gt;Get all the content from one page, we can use these content to find URLs and matched keyword&lt;/li&gt;&lt;br&gt;&lt;li&gt;Get all URLs from one page’s content&lt;/li&gt;&lt;br&gt;&lt;li&gt;Store all URLs that contain the keyword to a hash table from pages’ content&lt;/li&gt;&lt;br&gt;&lt;li&gt;Get a map of one page’s URL to all URLs that this page content, we can use this to rank our order&lt;/li&gt;&lt;br&gt;&lt;li&gt;Give as the rank list by using sorting algorithm&lt;/li&gt;&lt;br&gt;&lt;/ol&gt;&lt;/font&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zhaot777/PythonWebCrawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github code link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Summary&quot;&gt;&lt;a href=&quot;#Summary&quot; class=&quot;headerlink&quot; title=&quot;Summary&quot;&gt;&lt;/a&gt;Summary&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt; This project is a just implement a simple function to get the URLs from a seed page.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt; It is base on the given input cache, which is a dictionary that stores all the URLs and maps content.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;In fact, we can use Scrapy to help us to build a web crawler easier rather than write by ourselves.&lt;/p&gt;
+&lt;h3 id=&quot;More-about-Web-Crawler&quot;&gt;&lt;a href=&quot;#More-about-Web-Crawler&quot; class=&quot;headerlink&quot; title=&quot;More about Web Crawler&quot;&gt;&lt;/a&gt;More about Web Crawler&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Scrapy is a free and open source web crawling framework written in Python. Originally designed for web scraping, it can also be used to extract data using APIs or as a general purpose web crawler.  &lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt; If there are large scare of output, we can use this tool crawling content and store in MongoDB.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt; Next time I will use Scrapy and MongoDB to implement the web crawler.&lt;/p&gt;
+&lt;!-- Go to www.addthis.com/dashboard to customize your tools --&gt;
+&lt;div class=&quot;addthis_sharing_toolbox&quot;&gt;&lt;/div&gt;
+</content>
+    
+    <summary type="html">
+    
+      Web Crawler is a metasearch engine that blends the top search results. For this project, I wrote a web crawler by using Python, which can give us an order list of URLs of pages.
+    
+    </summary>
+    
+      <category term="Project" scheme="http://zhaot777.github.io/categories/Project/"/>
+    
+    
+      <category term="Angular.js" scheme="http://zhaot777.github.io/tags/Angular-js/"/>
+    
+  </entry>
   
   <entry>
     <title>Web Crawler</title>
