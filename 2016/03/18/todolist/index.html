@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://zhaot777.github.io/2016/03/18/todolist/index.html">
 <meta property="og:site_name" content="Steven's Blog">
 <meta property="og:description" content="This demo is a practice work for familiarizing Angular.js. The todo list can add new tasks, delete tasks and change the tasks condition from doing to done.">
-<meta property="og:updated_time" content="2016-03-18T08:32:49.583Z">
+<meta property="og:updated_time" content="2016-03-19T08:54:15.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="To Do List Demo">
 <meta name="twitter:description" content="This demo is a practice work for familiarizing Angular.js. The todo list can add new tasks, delete tasks and change the tasks condition from doing to done.">
@@ -313,28 +313,7 @@
       
 
       
-        <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><blockquote>
-<font size="2"><p>A <strong>Web crawler</strong> starts with a list of URLs to visit, called the seeds. As the crawler visits these URLs, it identifies all the hyperlinks in the page and adds them to the list of URLs to visit, called the crawl frontier. URLs from the frontier are recursively visited according to a set of policies. If the crawler is performing archiving of websites it copies and saves the information as it goes. The archives are usually stored in such a way they can be viewed, read and navigated as they were on the live web, but are preserved as ‘snapshots’.- <a href="https://en.wikipedia.org/wiki/Web_crawler" target="_blank" rel="external">wikipedia</a></p></font>
-
-</blockquote>
-<p>We can start from one seed page to search all the URLs with finite depth that we can get, then rank them in order, and give us the best choose or a rank list. And this is what the project does.<br></p>
-
-
-<h3 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h3><p></p><p>For this project, Our goal is base on the keyword from input we return a list of URLs, that all of them contain the keyword and the most popular URL rank at the top.</p>
-<p></p><p>We can divide the problem to several parts:</p>
-<font size="2"><ol><br><li>Get all the content from one page, we can use these content to find URLs and matched keyword</li><br><li>Get all URLs from one page’s content</li><br><li>Store all URLs that contain the keyword to a hash table from pages’ content</li><br><li>Get a map of one page’s URL to all URLs that this page content, we can use this to rank our order</li><br><li>Give as the rank list by using sorting algorithm</li><br></ol></font>
-
-
-<ul>
-<li><a href="https://github.com/zhaot777/PythonWebCrawler" target="_blank" rel="external">github code link</a></li>
-</ul>
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p></p><p> This project is a just implement a simple function to get the URLs from a seed page.</p>
-<p></p><p> It is base on the given input cache, which is a dictionary that stores all the URLs and maps content.</p>
-<p></p><p>In fact, we can use Scrapy to help us to build a web crawler easier rather than write by ourselves.</p>
-<h3 id="More-about-Web-Crawler"><a href="#More-about-Web-Crawler" class="headerlink" title="More about Web Crawler"></a>More about Web Crawler</h3><p></p><p>Scrapy is a free and open source web crawling framework written in Python. Originally designed for web scraping, it can also be used to extract data using APIs or as a general purpose web crawler.  </p>
-<p></p><p> If there are large scare of output, we can use this tool crawling content and store in MongoDB.</p>
-<p></p><p> Next time I will use Scrapy and MongoDB to implement the web crawler.</p>
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <div class="addthis_sharing_toolbox"></div>
 
       
@@ -550,7 +529,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Project"><span class="nav-number">2.</span> <span class="nav-text">Project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-number">3.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More-about-Web-Crawler"><span class="nav-number">4.</span> <span class="nav-text">More about Web Crawler</span></a></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
