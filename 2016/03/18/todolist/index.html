@@ -68,7 +68,7 @@
 <meta property="og:image" content="https://farm2.staticflickr.com/1604/25284321663_f4c97b9a5e_o.jpg">
 <meta property="og:image" content="https://farm2.staticflickr.com/1650/25601037730_045a9369af_o.png">
 <meta property="og:image" content="https://farm2.staticflickr.com/1536/25268890654_5310af6234_o.png">
-<meta property="og:updated_time" content="2016-03-19T19:46:00.495Z">
+<meta property="og:updated_time" content="2016-03-19T22:11:54.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="To Do List">
 <meta name="twitter:description" content="This demo is a practice work for familiarizing Angular.js. The todo list can add new tasks, delete tasks and change the tasks condition from doing to done.">
@@ -337,6 +337,15 @@
 </li>
 <li>A search bar is provided, so that the user is able to search for a particular TODO item<br>Bonus Functionality<br>The user is only presented with the option to delete a TODO item when they are hovering the mouse over that item</li>
 </ul>
+<blockquote>
+<p><strong>Note:</strong></p>
+<ol>
+<li>To fit the requirement, we can use 2 panels, one for searching tasks and another one for adding tasks.</li>
+<li>For add, completed and delete, we can use controller to change the status of item in our data.</li>
+<li>For searching item, we can create a filter, when click the search button, show the filtered data.</li>
+<li>The tricky part is to synchronized the search list and data list, when we click the delete button in either of this list, we need to delete the the same item in another list.</li>
+</ol>
+</blockquote>
 <h3 id="Demo-Display"><a href="#Demo-Display" class="headerlink" title="Demo Display"></a>Demo Display</h3><p></p><p>Initial page:<br><img src="https://farm2.staticflickr.com/1650/25601037730_045a9369af_o.png" width="1666" height="1042" alt="todolist1"><br></p><p></p>
 <p></p><p>After add tasks and do search:<br><img src="https://farm2.staticflickr.com/1536/25268890654_5310af6234_o.png" width="1625" height="1630" alt="todolist2"></p>
 <p></p><p></p>
