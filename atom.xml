@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhaot777.github.io/"/>
-  <updated>2016-03-19T19:36:40.736Z</updated>
+  <updated>2016-03-19T19:39:45.300Z</updated>
   <id>http://zhaot777.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://zhaot777.github.io/2016/03/18/todolist/"/>
     <id>http://zhaot777.github.io/2016/03/18/todolist/</id>
     <published>2016-03-18T08:17:14.614Z</published>
-    <updated>2016-03-19T19:36:40.736Z</updated>
+    <updated>2016-03-19T19:39:45.300Z</updated>
     
     <content type="html">&lt;figure&gt;&lt;br&gt;    &lt;img src=&quot;https://farm2.staticflickr.com/1604/25284321663_f4c97b9a5e_o.jpg&quot; width=&quot;863&quot; height=&quot;430&quot; alt=&quot;angular_bootstrap&quot;&gt;&lt;br&gt;&lt;/figure&gt;
 
@@ -42,8 +42,8 @@
 &lt;/li&gt;
 &lt;li&gt;A search bar is provided, so that the user is able to search for a particular TODO item&lt;br&gt;Bonus Functionality&lt;br&gt;The user is only presented with the option to delete a TODO item when they are hovering the mouse over that item&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;Demo-Display&quot;&gt;&lt;a href=&quot;#Demo-Display&quot; class=&quot;headerlink&quot; title=&quot;Demo Display&quot;&gt;&lt;/a&gt;Demo Display&lt;/h3&gt;&lt;p&gt;Initial page:&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1650/25601037730_c0af2e68a8_z.jpg&quot; width=&quot;640&quot; height=&quot;400&quot; alt=&quot;todolist1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;After add tasks and do search:&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1536/25268890654_4815dfc933_z.jpg&quot; width=&quot;638&quot; height=&quot;640&quot; alt=&quot;todolist2&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Demo-Display&quot;&gt;&lt;a href=&quot;#Demo-Display&quot; class=&quot;headerlink&quot; title=&quot;Demo Display&quot;&gt;&lt;/a&gt;Demo Display&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Initial page:&lt;/p&gt;&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1650/25601037730_c0af2e68a8_z.jpg&quot; width=&quot;640&quot; height=&quot;400&quot; alt=&quot;todolist1&quot;&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;After add tasks and do search:&lt;/p&gt;&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1536/25268890654_4815dfc933_z.jpg&quot; width=&quot;638&quot; height=&quot;640&quot; alt=&quot;todolist2&quot;&gt;&lt;p&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/zhaot777/angularjs_todolist.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github code link&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
