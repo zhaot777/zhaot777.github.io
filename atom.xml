@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhaot777.github.io/"/>
-  <updated>2016-03-19T19:15:41.825Z</updated>
+  <updated>2016-03-19T19:21:13.124Z</updated>
   <id>http://zhaot777.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://zhaot777.github.io/2016/03/18/todolist/"/>
     <id>http://zhaot777.github.io/2016/03/18/todolist/</id>
     <published>2016-03-18T08:17:14.614Z</published>
-    <updated>2016-03-19T19:15:41.825Z</updated>
+    <updated>2016-03-19T19:21:13.124Z</updated>
     
-    <content type="html">&lt;figure class=&quot;half&quot;&gt;&lt;br&gt;    &lt;img src=&quot;https://farm2.staticflickr.com/1703/25886692696_1622eb7bdf_m.jpg&quot; width=&quot;160&quot; height=&quot;160&quot; alt=&quot;angularjs&quot;&gt;&lt;br&gt;&lt;/figure&gt;
+    <content type="html">&lt;figure&gt;&lt;br&gt;&lt;div style=&quot;text-algin:center;&quot;&gt;&lt;br&gt;    &lt;img src=&quot;https://farm2.staticflickr.com/1703/25886692696_1622eb7bdf_m.jpg&quot; width=&quot;160&quot; height=&quot;160&quot; alt=&quot;angularjs&quot;&gt;&lt;br&gt;    &lt;/div&gt;&lt;br&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;AngularJS is an open-sourced web application JavaScript framework designed for Single Page Applications (SPA). An SPA is a web application or website that fits into a single web page. It is a design choice intended to provide a more fluid user experience. Angular’s data binding and dependency injection make your application’s components clear and succinct. If you are building a game or a computationally intensive math application, Angular may not fit your particular requirements, however, for generic web applications it should serve as a viable framework to build upon.&lt;/p&gt;
 &lt;h3 id=&quot;Instructions&quot;&gt;&lt;a href=&quot;#Instructions&quot; class=&quot;headerlink&quot; title=&quot;Instructions&quot;&gt;&lt;/a&gt;Instructions&lt;/h3&gt;&lt;p&gt;Implement a TODO list web application with the following functionality:&lt;/p&gt;
