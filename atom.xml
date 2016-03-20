@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhaot777.github.io/"/>
-  <updated>2016-03-19T22:11:54.335Z</updated>
+  <updated>2016-03-20T06:21:14.000Z</updated>
   <id>http://zhaot777.github.io/</id>
   
   <author>
@@ -14,6 +14,75 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>To Do List</title>
+    <link href="http://zhaot777.github.io/2016/03/19/todolist2/"/>
+    <id>http://zhaot777.github.io/2016/03/19/todolist2/</id>
+    <published>2016-03-19T07:00:00.000Z</published>
+    <updated>2016-03-20T06:21:14.000Z</updated>
+    
+    <content type="html">&lt;figure&gt;&lt;br&gt;    &lt;img src=&quot;https://farm2.staticflickr.com/1604/25284321663_f4c97b9a5e_o.jpg&quot; width=&quot;863&quot; height=&quot;430&quot;&gt;&lt;br&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;AngularJS&lt;/strong&gt; is an open-sourced web application JavaScript framework designed for Single Page Applications (SPA). An SPA is a web application or website that fits into a single web page. It is a design choice intended to provide a more fluid user experience. Angular’s data binding and dependency injection make your application’s components clear and succinct. If you are building a game or a computationally intensive math application, Angular may not fit your particular requirements, however, for generic web applications it should serve as a viable framework to build upon.&lt;/p&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;&lt;strong&gt;Bootstrap&lt;/strong&gt; is a free front-end framework for faster and easier web development. It includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins. Bootstrap also gives you the ability to easily create responsive designs&lt;/p&gt;
+
+&lt;hr&gt;
+&lt;h3 id=&quot;Instructions&quot;&gt;&lt;a href=&quot;#Instructions&quot; class=&quot;headerlink&quot; title=&quot;Instructions&quot;&gt;&lt;/a&gt;Instructions&lt;/h3&gt;&lt;p&gt;Implement a TODO list web application with the following functionality:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Initial page with empty “TODO list”&lt;/li&gt;
+&lt;li&gt;User has the ability to Add/Delete a TODO item&lt;/li&gt;
+&lt;li&gt;User has the ability to mark one item as completed&lt;/li&gt;
+&lt;li&gt;User has the ability to view TODO list items in different&lt;/li&gt;
+&lt;li&gt;tabs based on the following states:&lt;ul&gt;
+&lt;li&gt;All&lt;/li&gt;
+&lt;li&gt;Active&lt;/li&gt;
+&lt;li&gt;Completed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;A search bar is provided, so that the user is able to search for a particular TODO item&lt;br&gt;Bonus Functionality&lt;br&gt;The user is only presented with the option to delete a TODO item when they are hovering the mouse over that item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;To fit the requirement, we can use 2 panels, one for searching tasks and another one for adding tasks.&lt;/li&gt;
+&lt;li&gt;For add, completed and delete, we can use controller to change the status of item in our data. &lt;/li&gt;
+&lt;li&gt;For searching item, we can create a filter, when click the search button, show the filtered data.&lt;/li&gt;
+&lt;li&gt;The tricky part is to synchronized the search list and data list, when we click the delete button in either of this list, we need to delete the the same item in another list.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;Demo-Display&quot;&gt;&lt;a href=&quot;#Demo-Display&quot; class=&quot;headerlink&quot; title=&quot;Demo Display&quot;&gt;&lt;/a&gt;Demo Display&lt;/h3&gt;&lt;p&gt;Initial page:&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1650/25601037730_045a9369af_o.png&quot; width=&quot;1666&quot; height=&quot;1042&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;After add tasks and do search:&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1536/25268890654_5310af6234_o.png&quot; width=&quot;1625&quot; height=&quot;1630&quot;&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zhaot777/angularjs_todolist.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github code link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;figure&gt;&lt;br&gt;    &lt;img src=&quot;https://farm2.staticflickr.com/1604/25284321663_f4c97b9a5e_o.jpg&quot; width=&quot;863&quot; height=&quot;430&quot;&gt;&lt;br&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;AngularJS&lt;/strong&gt; is an open-sourced web application JavaScript framework designed for Single Page Applications (SPA). An SPA is a web application or website that fits into a single web page. It is a design choice intended to provide a more fluid user experience. Angular’s data binding and dependency injection make your application’s components clear and succinct. If you are building a game or a computationally intensive math application, Angular may not fit your particular requirements, however, for generic web applications it should serve as a viable framework to build upon.&lt;/p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Project" scheme="http://zhaot777.github.io/categories/Project/"/>
+    
+      <category term="Web Develop" scheme="http://zhaot777.github.io/categories/Project/Web-Develop/"/>
+    
+    
+      <category term="Angular.js" scheme="http://zhaot777.github.io/tags/Angular-js/"/>
+    
+      <category term="JavaScript" scheme="http://zhaot777.github.io/tags/JavaScript/"/>
+    
+      <category term="HTML" scheme="http://zhaot777.github.io/tags/HTML/"/>
+    
+      <category term="Bootstrap" scheme="http://zhaot777.github.io/tags/Bootstrap/"/>
+    
+      <category term="JSON" scheme="http://zhaot777.github.io/tags/JSON/"/>
+    
+  </entry>
   
   <entry>
     <title>To Do List</title>
