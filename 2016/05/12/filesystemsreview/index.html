@@ -69,7 +69,7 @@
 <meta property="og:image" content="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png">
-<meta property="og:updated_time" content="2016-05-13T07:27:43.284Z">
+<meta property="og:updated_time" content="2016-05-13T07:31:12.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="File Systems Review">
 <meta name="twitter:description" content="This is a review of file systems, and focus on F5SF, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
@@ -323,8 +323,7 @@
 <li>Permanent storage</li>
 <li>Quick, easy and efficient</li>
 </ul>
-<h3 id="The-Basics-of-File-Systems"><a href="#The-Basics-of-File-Systems" class="headerlink" title="The Basics of File Systems"></a>The Basics of File Systems</h3><h4 id="Disk-Architecture"><a href="#Disk-Architecture" class="headerlink" title="Disk Architecture"></a>Disk Architecture</h4><figure><br>    <img src="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg" width="400" height="300" alt="angular_bootstrap"><br></figure>
-
+<h3 id="The-Basics-of-File-Systems"><a href="#The-Basics-of-File-Systems" class="headerlink" title="The Basics of File Systems"></a>The Basics of File Systems</h3><h4 id="Disk-Architecture"><a href="#Disk-Architecture" class="headerlink" title="Disk Architecture"></a>Disk Architecture</h4><p><img src="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg" width="400" height="300" alt="angular_bootstrap"></p>
 <ul>
 <li><p>Have multiple platters and each one have top and bottom heads.</p>
 </li>
@@ -334,14 +333,11 @@
 </li>
 </ul>
 <h4 id="S5FS"><a href="#S5FS" class="headerlink" title="S5FS"></a>S5FS</h4><p>Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression</p>
-<figure><br>    <img src="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg" width="180" height="300" alt="angular_bootstrap"><br></figure>
-
+<p><img src="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg" width="180" height="280" alt="angular_bootstrap"></p>
 <ol>
 <li><p>Layout</p>
 <p> The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.</p>
 </li>
-</ol>
-<ol>
 <li><p>Superblock</p>
 <ul>
 <li><p>Contains the head of the free list</p>
@@ -379,8 +375,7 @@
 <li><p>Can spread data, allowing parallel access, increase effective access time</p>
 </li>
 </ul>
-<h4 id="Logical-Volume-Manager-LVM"><a href="#Logical-Volume-Manager-LVM" class="headerlink" title="Logical Volume Manager (LVM)"></a>Logical Volume Manager (LVM)</h4><figure><br>    <img src="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png" width="450" height="210" alt="angular_bootstrap"><br></figure>
-
+<h4 id="Logical-Volume-Manager-LVM"><a href="#Logical-Volume-Manager-LVM" class="headerlink" title="Logical Volume Manager (LVM)"></a>Logical Volume Manager (LVM)</h4><p><img src="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png" width="400" height="200" alt="angular_bootstrap"></p>
 <p>Manage multiple disks and try not change existing file systems much.</p>
 <ul>
 <li><p>Spanning</p>
