@@ -69,7 +69,7 @@
 <meta property="og:image" content="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png">
-<meta property="og:updated_time" content="2016-05-13T07:31:12.468Z">
+<meta property="og:updated_time" content="2016-05-13T07:34:03.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="File Systems Review">
 <meta name="twitter:description" content="This is a review of file systems, and focus on F5SF, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
@@ -333,9 +333,9 @@
 </li>
 </ul>
 <h4 id="S5FS"><a href="#S5FS" class="headerlink" title="S5FS"></a>S5FS</h4><p>Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression</p>
-<p><img src="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg" width="180" height="280" alt="angular_bootstrap"></p>
 <ol>
 <li><p>Layout</p>
+<p> <img src="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg" width="180" height="280" alt="angular_bootstrap"></p>
 <p> The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.</p>
 </li>
 <li><p>Superblock</p>
@@ -352,9 +352,9 @@
 <p> For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map</p>
 </li>
 </ol>
-<p><img src="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg" width="450" height="350" alt="angular_bootstrap"></p>
 <ul>
 <li><p>Disk map</p>
+<p>  <img src="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg" width="450" height="350" alt="angular_bootstrap"></p>
 <p>  0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.</p>
 </li>
 </ul>

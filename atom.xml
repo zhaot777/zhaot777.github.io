@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhaot777.github.io/"/>
-  <updated>2016-05-13T07:31:12.468Z</updated>
+  <updated>2016-05-13T07:34:03.495Z</updated>
   <id>http://zhaot777.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://zhaot777.github.io/2016/05/12/filesystemsreview/"/>
     <id>http://zhaot777.github.io/2016/05/12/filesystemsreview/</id>
     <published>2016-05-13T06:01:40.051Z</published>
-    <updated>2016-05-13T07:31:12.468Z</updated>
+    <updated>2016-05-13T07:34:03.495Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;The requirements of file systems:&lt;/p&gt;
 &lt;ul&gt;
@@ -37,9 +37,9 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&quot;S5FS&quot;&gt;&lt;a href=&quot;#S5FS&quot; class=&quot;headerlink&quot; title=&quot;S5FS&quot;&gt;&lt;/a&gt;S5FS&lt;/h4&gt;&lt;p&gt;Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg&quot; width=&quot;180&quot; height=&quot;280&quot; alt=&quot;angular_bootstrap&quot;&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Layout&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg&quot; width=&quot;180&quot; height=&quot;280&quot; alt=&quot;angular_bootstrap&quot;&gt;&lt;/p&gt;
 &lt;p&gt; The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Superblock&lt;/p&gt;
@@ -56,9 +56,9 @@
 &lt;p&gt; For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg&quot; width=&quot;450&quot; height=&quot;350&quot; alt=&quot;angular_bootstrap&quot;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Disk map&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg&quot; width=&quot;450&quot; height=&quot;350&quot; alt=&quot;angular_bootstrap&quot;&gt;&lt;/p&gt;
 &lt;p&gt;  0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
