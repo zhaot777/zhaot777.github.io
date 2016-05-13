@@ -59,12 +59,12 @@
 
 
 
-<meta name="description" content="This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
+<meta name="description" content="This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="File Systems Review">
 <meta property="og:url" content="http://zhaot777.github.io/2016/05/12/filesystemsreview/index.html">
 <meta property="og:site_name" content="Steven's Blog">
-<meta property="og:description" content="This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
+<meta property="og:description" content="This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.">
 <meta property="og:image" content="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg">
@@ -73,10 +73,10 @@
 <meta property="og:image" content="https://farm8.staticflickr.com/7251/26387400194_a85f1f718a_b.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7589/26387505004_aabd34527c_b.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg">
-<meta property="og:updated_time" content="2016-05-13T18:55:34.071Z">
+<meta property="og:updated_time" content="2016-05-13T19:03:44.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="File Systems Review">
-<meta name="twitter:description" content="This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
+<meta name="twitter:description" content="This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.">
 <meta name="twitter:image" content="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg">
 
 
@@ -347,17 +347,16 @@
 <li>Maintain a free inode list (inode cache):<br>  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.</li>
 </ul>
 </li>
-<li>I-list<ul>
+<li><p>I-list</p>
+<ul>
 <li>For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map</li>
 </ul>
 </li>
-</ol>
-<ul>
 <li><p>Disk map</p>
-<p>  <img src="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg" width="450" height="320" alt="Disk map"></p>
-<p>  0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.</p>
+<p> <img src="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg" width="450" height="320" alt="Disk map"></p>
+<p> 0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.</p>
 </li>
-</ul>
+</ol>
 <h4 id="Improvement-of-S5FS"><a href="#Improvement-of-S5FS" class="headerlink" title="Improvement of S5FS"></a>Improvement of S5FS</h4><p>Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)</p>
 <ul>
 <li>Increase block size</li>
@@ -397,23 +396,19 @@
 <li>Probability of N-disk system failing is: 1-(1-fail)^N</li>
 </ul>
 <h4 id="Redundant-Array-of-Inexpensive-Disks-RAID"><a href="#Redundant-Array-of-Inexpensive-Disks-RAID" class="headerlink" title="Redundant Array of Inexpensive Disks (RAID)"></a>Redundant Array of Inexpensive Disks (RAID)</h4><ul>
-<li>level 1:<br>  Just mirroring.</li>
-<li>level 2:<br>  Similar to memory’s ECC, use serveal disks to check bits.</li>
-<li>level 3:<br>  Use one disk to maintain parity bits.</li>
-<li>level 4:<br>  Use one disk to maintain parity blocks.</li>
-<li>level 5:<br>  Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.</li>
+<li>level 1: Just mirroring.</li>
+<li>level 2: Similar to memory’s ECC, use serveal disks to check bits.</li>
+<li>level 3: Use one disk to maintain parity bits.</li>
+<li>level 4: Use one disk to maintain parity blocks.</li>
+<li>level 5: Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.</li>
 </ul>
 <h3 id="Flash-Memory"><a href="#Flash-Memory" class="headerlink" title="Flash Memory"></a>Flash Memory</h3><ol>
-<li><p>Technologies of Flash</p>
-<ul>
+<li>Technologies of Flash<ul>
 <li>NOR: Byte addressable.</li>
 <li>NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.</li>
 </ul>
 </li>
-</ol>
-<ol>
-<li><p>Wear leveling</p>
-<ul>
+<li>Wear leveling<ul>
 <li>Writing problem: To change zeroes to ones, must erase entire block.</li>
 <li>Spread writes/erasures across entire drive.</li>
 <li>Using flash traslation layer(FTL) and log-structured file system.</li>
@@ -465,8 +460,9 @@
 <h4 id="Name-Space-Management"><a href="#Name-Space-Management" class="headerlink" title="Name-Space Management"></a>Name-Space Management</h4><ul>
 <li>For Windows, it use drives to make the name-space appear uniform. For Unix, it use file system mounting.</li>
 </ul>
-<h3 id="File-systems-Summary"><a href="#File-systems-Summary" class="headerlink" title="File systems Summary"></a>File systems Summary</h3><p><img src="https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg" width="450" height="300" alt="file_system_summary"></p>
-<div class="addthis_sharing_toolbox"></div>
+<h3 id="File-systems-Summary"><a href="#File-systems-Summary" class="headerlink" title="File systems Summary"></a>File systems Summary</h3><p>This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.</p>
+<p><img src="https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg" width="450" height="280" alt="file_system_summary"></p>
+
       
     </div>
 

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhaot777.github.io/"/>
-  <updated>2016-05-13T18:55:34.071Z</updated>
+  <updated>2016-05-13T19:03:44.158Z</updated>
   <id>http://zhaot777.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://zhaot777.github.io/2016/05/12/filesystemsreview/"/>
     <id>http://zhaot777.github.io/2016/05/12/filesystemsreview/</id>
     <published>2016-05-13T06:01:40.051Z</published>
-    <updated>2016-05-13T18:55:34.071Z</updated>
+    <updated>2016-05-13T19:03:44.158Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;The requirements of file systems:&lt;/p&gt;
 &lt;ul&gt;
@@ -47,17 +47,16 @@
 &lt;li&gt;Maintain a free inode list (inode cache):&lt;br&gt;  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;I-list&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I-list&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Disk map&lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg&quot; width=&quot;450&quot; height=&quot;320&quot; alt=&quot;Disk map&quot;&gt;&lt;/p&gt;
-&lt;p&gt;  0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg&quot; width=&quot;450&quot; height=&quot;320&quot; alt=&quot;Disk map&quot;&gt;&lt;/p&gt;
+&lt;p&gt; 0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;h4 id=&quot;Improvement-of-S5FS&quot;&gt;&lt;a href=&quot;#Improvement-of-S5FS&quot; class=&quot;headerlink&quot; title=&quot;Improvement of S5FS&quot;&gt;&lt;/a&gt;Improvement of S5FS&lt;/h4&gt;&lt;p&gt;Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Increase block size&lt;/li&gt;
@@ -97,23 +96,19 @@
 &lt;li&gt;Probability of N-disk system failing is: 1-(1-fail)^N&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&quot;Redundant-Array-of-Inexpensive-Disks-RAID&quot;&gt;&lt;a href=&quot;#Redundant-Array-of-Inexpensive-Disks-RAID&quot; class=&quot;headerlink&quot; title=&quot;Redundant Array of Inexpensive Disks (RAID)&quot;&gt;&lt;/a&gt;Redundant Array of Inexpensive Disks (RAID)&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;level 1:&lt;br&gt;  Just mirroring.&lt;/li&gt;
-&lt;li&gt;level 2:&lt;br&gt;  Similar to memory’s ECC, use serveal disks to check bits.&lt;/li&gt;
-&lt;li&gt;level 3:&lt;br&gt;  Use one disk to maintain parity bits.&lt;/li&gt;
-&lt;li&gt;level 4:&lt;br&gt;  Use one disk to maintain parity blocks.&lt;/li&gt;
-&lt;li&gt;level 5:&lt;br&gt;  Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.&lt;/li&gt;
+&lt;li&gt;level 1: Just mirroring.&lt;/li&gt;
+&lt;li&gt;level 2: Similar to memory’s ECC, use serveal disks to check bits.&lt;/li&gt;
+&lt;li&gt;level 3: Use one disk to maintain parity bits.&lt;/li&gt;
+&lt;li&gt;level 4: Use one disk to maintain parity blocks.&lt;/li&gt;
+&lt;li&gt;level 5: Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;Flash-Memory&quot;&gt;&lt;a href=&quot;#Flash-Memory&quot; class=&quot;headerlink&quot; title=&quot;Flash Memory&quot;&gt;&lt;/a&gt;Flash Memory&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Technologies of Flash&lt;/p&gt;
-&lt;ul&gt;
+&lt;li&gt;Technologies of Flash&lt;ul&gt;
 &lt;li&gt;NOR: Byte addressable.&lt;/li&gt;
 &lt;li&gt;NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Wear leveling&lt;/p&gt;
-&lt;ul&gt;
+&lt;li&gt;Wear leveling&lt;ul&gt;
 &lt;li&gt;Writing problem: To change zeroes to ones, must erase entire block.&lt;/li&gt;
 &lt;li&gt;Spread writes/erasures across entire drive.&lt;/li&gt;
 &lt;li&gt;Using flash traslation layer(FTL) and log-structured file system.&lt;/li&gt;
@@ -165,12 +160,13 @@
 &lt;h4 id=&quot;Name-Space-Management&quot;&gt;&lt;a href=&quot;#Name-Space-Management&quot; class=&quot;headerlink&quot; title=&quot;Name-Space Management&quot;&gt;&lt;/a&gt;Name-Space Management&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;For Windows, it use drives to make the name-space appear uniform. For Unix, it use file system mounting.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;File-systems-Summary&quot;&gt;&lt;a href=&quot;#File-systems-Summary&quot; class=&quot;headerlink&quot; title=&quot;File systems Summary&quot;&gt;&lt;/a&gt;File systems Summary&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg&quot; width=&quot;450&quot; height=&quot;300&quot; alt=&quot;file_system_summary&quot;&gt;&lt;/p&gt;
-&lt;div class=&quot;addthis_sharing_toolbox&quot;&gt;&lt;/div&gt;</content>
+&lt;h3 id=&quot;File-systems-Summary&quot;&gt;&lt;a href=&quot;#File-systems-Summary&quot; class=&quot;headerlink&quot; title=&quot;File systems Summary&quot;&gt;&lt;/a&gt;File systems Summary&lt;/h3&gt;&lt;p&gt;This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg&quot; width=&quot;450&quot; height=&quot;280&quot; alt=&quot;file_system_summary&quot;&gt;&lt;/p&gt;
+</content>
     
     <summary type="html">
     
-      This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS
+      This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.
     
     </summary>
     
