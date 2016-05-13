@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="OS," />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="Web Crawler is a metasearch engine that blends the top search results. For this project, I wrote a web crawler by using Python, which can give us an order list of URLs of pages.">
+<meta name="description" content="This is a review of file systems, and focus on F5SF, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web Crawler">
-<meta property="og:url" content="http://zhaot777.github.io/2016/03/01/webcrawler/index.html">
+<meta property="og:title" content="File Systems Review">
+<meta property="og:url" content="http://zhaot777.github.io/2016/05/12/filesystemsreview/index.html">
 <meta property="og:site_name" content="Steven's Blog">
-<meta property="og:description" content="Web Crawler is a metasearch engine that blends the top search results. For this project, I wrote a web crawler by using Python, which can give us an order list of URLs of pages.">
-<meta property="og:updated_time" content="2016-03-03T08:51:12.588Z">
+<meta property="og:description" content="This is a review of file systems, and focus on F5SF, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
+<meta property="og:updated_time" content="2016-05-13T06:17:45.123Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web Crawler">
-<meta name="twitter:description" content="Web Crawler is a metasearch engine that blends the top search results. For this project, I wrote a web crawler by using Python, which can give us an order list of URLs of pages.">
+<meta name="twitter:title" content="File Systems Review">
+<meta name="twitter:description" content="This is a review of file systems, and focus on F5SF, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> Web Crawler | Steven's Blog </title>
+  <title> File Systems Review | Steven's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -248,7 +248,7 @@
             
             
               
-                Web Crawler
+                File Systems Review
               
             
           </h1>
@@ -260,8 +260,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-01T03:16:42-08:00" content="2016-03-01">
-              2016-03-01
+            <time itemprop="dateCreated" datetime="2016-05-12T23:01:40-07:00" content="2016-05-12">
+              2016-05-12
             </time>
           </span>
 
@@ -274,8 +274,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Project/" itemprop="url" rel="index">
-                    <span itemprop="name">Project</span>
+                  <a href="/categories/Operating-Systems/" itemprop="url" rel="index">
+                    <span itemprop="name">Operating Systems</span>
                   </a>
                 </span>
 
@@ -290,8 +290,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/01/webcrawler/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/01/webcrawler/" itemprop="commentsCount"></span>
+                <a href="/2016/05/12/filesystemsreview/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/12/filesystemsreview/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,30 +313,122 @@
       
 
       
-        <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><blockquote>
-<font size="2"><p>A <strong>Web crawler</strong> starts with a list of URLs to visit, called the seeds. As the crawler visits these URLs, it identifies all the hyperlinks in the page and adds them to the list of URLs to visit, called the crawl frontier. URLs from the frontier are recursively visited according to a set of policies. If the crawler is performing archiving of websites it copies and saves the information as it goes. The archives are usually stored in such a way they can be viewed, read and navigated as they were on the live web, but are preserved as ‘snapshots’.- <a href="https://en.wikipedia.org/wiki/Web_crawler" target="_blank" rel="external">wikipedia</a></p></font>
-
-</blockquote>
-<p>We can start from one seed page to search all the URLs with finite depth that we can get, then rank them in order, and give us the best choose or a rank list. And this is what the project does.<br></p>
-
-
-<h3 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h3><p></p><p>For this project, Our goal is base on the keyword from input we return a list of URLs, that all of them contain the keyword and the most popular URL rank at the top.</p>
-<p></p><p>We can divide the problem to several parts:</p>
-<font size="2"><ol><br><li>Get all the content from one page, we can use these content to find URLs and matched keyword</li><br><li>Get all URLs from one page’s content</li><br><li>Store all URLs that contain the keyword to a hash table from pages’ content</li><br><li>Get a map of one page’s URL to all URLs that this page content, we can use this to rank our order</li><br><li>Give as the rank list by using sorting algorithm</li><br></ol></font>
-
-
+        <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>The requirements of file systems:</p>
 <ul>
-<li><a href="https://github.com/zhaot777/PythonWebCrawler" target="_blank" rel="external">github code link</a></li>
+<li>Permanent storage</li>
+<li>Quick, easy and efficient</li>
 </ul>
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p></p><p> This project is a just implement a simple function to get the URLs from a seed page.</p>
-<p></p><p> It is base on the given input cache, which is a dictionary that stores all the URLs and maps content.</p>
-<p></p><p>In fact, we can use Scrapy to help us to build a web crawler easier rather than write by ourselves.</p>
-<h3 id="More-about-Web-Crawler"><a href="#More-about-Web-Crawler" class="headerlink" title="More about Web Crawler"></a>More about Web Crawler</h3><p></p><p>Scrapy is a free and open source web crawling framework written in Python. Originally designed for web scraping, it can also be used to extract data using APIs or as a general purpose web crawler.  </p>
-<p></p><p> If there are large scare of output, we can use this tool crawling content and store in MongoDB.</p>
-<p></p><p> Next time I will use Scrapy and MongoDB to implement the web crawler.</p>
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class="addthis_sharing_toolbox"></div>
-
+<h3 id="The-Basics-of-File-Systems"><a href="#The-Basics-of-File-Systems" class="headerlink" title="The Basics of File Systems"></a>The Basics of File Systems</h3><h4 id="Disk-Architecture"><a href="#Disk-Architecture" class="headerlink" title="Disk Architecture"></a>Disk Architecture</h4><ul>
+<li><p>Have multiple platters and each one have top and bottom heads.</p>
+</li>
+<li><p>The smallest addressable unit is a sector. Each platter contains many tracks and each track contains many sectors. The same vertical’s tracks is one cylinder.</p>
+</li>
+<li><p>disk address = (head/surface#, cylinder/track#, sector#)</p>
+</li>
+</ul>
+<h4 id="S5FS"><a href="#S5FS" class="headerlink" title="S5FS"></a>S5FS</h4><p>Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression</p>
+<ol>
+<li><p>Layout</p>
+<p> The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.</p>
+</li>
+<li><p>Superblock</p>
+<ul>
+<li><p>Contains the head of the free list</p>
+<p>  Can address up to 100 free disk blocks, and the last pointer point to additional free disk blocks, etc.</p>
+</li>
+<li><p>Maintain a free inode list (inode cache)</p>
+<p>  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.</p>
+</li>
+</ul>
+</li>
+<li><p>I-list</p>
+<ul>
+<li><p>For each inode it contains:    </p>
+<p>  Device, inode number, file type, link count, owner group, size and disk map.</p>
+</li>
+<li><p>Disk map </p>
+<p>  0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Improvement-of-S5FS"><a href="#Improvement-of-S5FS" class="headerlink" title="Improvement of S5FS"></a>Improvement of S5FS</h4><p>Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)</p>
+<ul>
+<li><p>Increase block size</p>
+</li>
+<li><p>Minimizing seek time:<br>  Use cylinder groups to put related data in the same cylinde group</p>
+</li>
+<li><p>Minimizing Latency:<br>  Block interleaving</p>
+</li>
+</ul>
+<h3 id="Multiple-Disks"><a href="#Multiple-Disks" class="headerlink" title="Multiple Disks"></a>Multiple Disks</h3><h4 id="Benefits-of-Multiple-Disks"><a href="#Benefits-of-Multiple-Disks" class="headerlink" title="Benefits of Multiple Disks"></a>Benefits of Multiple Disks</h4><ul>
+<li><p>Hold more data</p>
+</li>
+<li><p>Can be stored redundantly, increase reliability and availability</p>
+</li>
+<li><p>Can spread data, allowing parallel access, increase effective access time</p>
+</li>
+</ul>
+<h4 id="Logical-Volume-Manager-LVM"><a href="#Logical-Volume-Manager-LVM" class="headerlink" title="Logical Volume Manager (LVM)"></a>Logical Volume Manager (LVM)</h4><p>Manage multiple disks and try not change existing file systems much.</p>
+<ul>
+<li><p>Spanning</p>
+<p>  Multiple disks appear to file system as one large disk</p>
+</li>
+<li><p>Mirroring</p>
+<p>  Write redundantly to multiple disks. Read from one.</p>
+</li>
+</ul>
+<h4 id="Striping"><a href="#Striping" class="headerlink" title="Striping"></a>Striping</h4><p>One disk keep one striping unit data and then the next disk keep next one string unit data and keep doing this.</p>
+<ul>
+<li><p>Advantages: Increase parallelism.</p>
+</li>
+<li><p>Disadvantages: Worse reliability, higher variance and heterogenious disks will reduce the saving access time.</p>
+</li>
+<li><p>In general, performance is better with larger striping unit, which can reduce seek time</p>
+</li>
+<li><p>Probability of N-disk system failing is: 1-(1-fail)^N</p>
+</li>
+</ul>
+<h4 id="Redundant-Array-of-Inexpensive-Disks-RAID"><a href="#Redundant-Array-of-Inexpensive-Disks-RAID" class="headerlink" title="Redundant Array of Inexpensive Disks (RAID)"></a>Redundant Array of Inexpensive Disks (RAID)</h4><ul>
+<li><p>level 1</p>
+<p>  Just mirroring.</p>
+</li>
+<li><p>level 2</p>
+<p>  Similar to memory’s ECC, use serveal disks to check bits.</p>
+</li>
+<li><p>level 3</p>
+<p>  Use one disk to maintain parity bits.</p>
+</li>
+<li><p>level 4</p>
+<p>  Use one disk to maintain parity blocks.</p>
+</li>
+<li><p>level 5</p>
+<p>  Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.</p>
+</li>
+</ul>
+<h3 id="Flash-Memory"><a href="#Flash-Memory" class="headerlink" title="Flash Memory"></a>Flash Memory</h3><ol>
+<li><p>Technologies of Flash</p>
+<ul>
+<li><p>NOR: Byte addressable.</p>
+</li>
+<li><p>NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><p>Wear leveling</p>
+<ul>
+<li><p>Writing problem: To change zeroes to ones, must erase entire block.</p>
+</li>
+<li><p>Spread writes/erasures across entire drive.</p>
+</li>
+<li><p>Using flash traslation layer(FTL) and log-structured file system.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Crash-Resiliency"><a href="#Crash-Resiliency" class="headerlink" title="Crash Resiliency"></a>Crash Resiliency</h3><h3 id="Naming-and-dirctories"><a href="#Naming-and-dirctories" class="headerlink" title="Naming and dirctories"></a>Naming and dirctories</h3><h3 id="File-systems-in-different-OS"><a href="#File-systems-in-different-OS" class="headerlink" title="File systems in different OS"></a>File systems in different OS</h3>
       
     </div>
 
@@ -350,7 +442,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag">#Python</a>
+            <a href="/tags/OS/" rel="tag">#OS</a>
           
         </div>
       
@@ -359,17 +451,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/21/percolation/" rel="next" title="Percolation Theory">
-                <i class="fa fa-chevron-left"></i> Percolation Theory
+              <a href="/2016/03/18/todolist/" rel="next" title="To Do List">
+                <i class="fa fa-chevron-left"></i> To Do List
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/18/todolist/" rel="prev" title="To Do List">
-                To Do List <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -554,7 +642,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Project"><span class="nav-number">2.</span> <span class="nav-text">Project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-number">3.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More-about-Web-Crawler"><span class="nav-number">4.</span> <span class="nav-text">More about Web Crawler</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Basics-of-File-Systems"><span class="nav-number">2.</span> <span class="nav-text">The Basics of File Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Disk-Architecture"><span class="nav-number">2.1.</span> <span class="nav-text">Disk Architecture</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#S5FS"><span class="nav-number">2.2.</span> <span class="nav-text">S5FS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Improvement-of-S5FS"><span class="nav-number">2.3.</span> <span class="nav-text">Improvement of S5FS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiple-Disks"><span class="nav-number">3.</span> <span class="nav-text">Multiple Disks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Benefits-of-Multiple-Disks"><span class="nav-number">3.1.</span> <span class="nav-text">Benefits of Multiple Disks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Logical-Volume-Manager-LVM"><span class="nav-number">3.2.</span> <span class="nav-text">Logical Volume Manager (LVM)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Striping"><span class="nav-number">3.3.</span> <span class="nav-text">Striping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Redundant-Array-of-Inexpensive-Disks-RAID"><span class="nav-number">3.4.</span> <span class="nav-text">Redundant Array of Inexpensive Disks (RAID)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flash-Memory"><span class="nav-number">4.</span> <span class="nav-text">Flash Memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Crash-Resiliency"><span class="nav-number">5.</span> <span class="nav-text">Crash Resiliency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Naming-and-dirctories"><span class="nav-number">6.</span> <span class="nav-text">Naming and dirctories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-systems-in-different-OS"><span class="nav-number">7.</span> <span class="nav-text">File systems in different OS</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -812,9 +900,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'zhaot777githubio';
-      var disqus_identifier = '2016/03/01/webcrawler/';
-      var disqus_title = 'Web Crawler';
-      var disqus_url = 'http://zhaot777.github.io/2016/03/01/webcrawler/';
+      var disqus_identifier = '2016/05/12/filesystemsreview/';
+      var disqus_title = 'File Systems Review';
+      var disqus_url = 'http://zhaot777.github.io/2016/05/12/filesystemsreview/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

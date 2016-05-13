@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhaot777.github.io/"/>
-  <updated>2016-03-19T22:11:54.335Z</updated>
+  <updated>2016-05-13T06:17:45.123Z</updated>
   <id>http://zhaot777.github.io/</id>
   
   <author>
@@ -14,6 +14,143 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>File Systems Review</title>
+    <link href="http://zhaot777.github.io/2016/05/12/filesystemsreview/"/>
+    <id>http://zhaot777.github.io/2016/05/12/filesystemsreview/</id>
+    <published>2016-05-13T06:01:40.051Z</published>
+    <updated>2016-05-13T06:17:45.123Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;The requirements of file systems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Permanent storage&lt;/li&gt;
+&lt;li&gt;Quick, easy and efficient&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;The-Basics-of-File-Systems&quot;&gt;&lt;a href=&quot;#The-Basics-of-File-Systems&quot; class=&quot;headerlink&quot; title=&quot;The Basics of File Systems&quot;&gt;&lt;/a&gt;The Basics of File Systems&lt;/h3&gt;&lt;h4 id=&quot;Disk-Architecture&quot;&gt;&lt;a href=&quot;#Disk-Architecture&quot; class=&quot;headerlink&quot; title=&quot;Disk Architecture&quot;&gt;&lt;/a&gt;Disk Architecture&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Have multiple platters and each one have top and bottom heads.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The smallest addressable unit is a sector. Each platter contains many tracks and each track contains many sectors. The same vertical’s tracks is one cylinder.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;disk address = (head/surface#, cylinder/track#, sector#)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;S5FS&quot;&gt;&lt;a href=&quot;#S5FS&quot; class=&quot;headerlink&quot; title=&quot;S5FS&quot;&gt;&lt;/a&gt;S5FS&lt;/h4&gt;&lt;p&gt;Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Layout&lt;/p&gt;
+&lt;p&gt; The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Superblock&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Contains the head of the free list&lt;/p&gt;
+&lt;p&gt;  Can address up to 100 free disk blocks, and the last pointer point to additional free disk blocks, etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Maintain a free inode list (inode cache)&lt;/p&gt;
+&lt;p&gt;  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I-list&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;For each inode it contains:    &lt;/p&gt;
+&lt;p&gt;  Device, inode number, file type, link count, owner group, size and disk map.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Disk map &lt;/p&gt;
+&lt;p&gt;  0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;Improvement-of-S5FS&quot;&gt;&lt;a href=&quot;#Improvement-of-S5FS&quot; class=&quot;headerlink&quot; title=&quot;Improvement of S5FS&quot;&gt;&lt;/a&gt;Improvement of S5FS&lt;/h4&gt;&lt;p&gt;Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Increase block size&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Minimizing seek time:&lt;br&gt;  Use cylinder groups to put related data in the same cylinde group&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Minimizing Latency:&lt;br&gt;  Block interleaving&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Multiple-Disks&quot;&gt;&lt;a href=&quot;#Multiple-Disks&quot; class=&quot;headerlink&quot; title=&quot;Multiple Disks&quot;&gt;&lt;/a&gt;Multiple Disks&lt;/h3&gt;&lt;h4 id=&quot;Benefits-of-Multiple-Disks&quot;&gt;&lt;a href=&quot;#Benefits-of-Multiple-Disks&quot; class=&quot;headerlink&quot; title=&quot;Benefits of Multiple Disks&quot;&gt;&lt;/a&gt;Benefits of Multiple Disks&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Hold more data&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Can be stored redundantly, increase reliability and availability&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Can spread data, allowing parallel access, increase effective access time&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Logical-Volume-Manager-LVM&quot;&gt;&lt;a href=&quot;#Logical-Volume-Manager-LVM&quot; class=&quot;headerlink&quot; title=&quot;Logical Volume Manager (LVM)&quot;&gt;&lt;/a&gt;Logical Volume Manager (LVM)&lt;/h4&gt;&lt;p&gt;Manage multiple disks and try not change existing file systems much.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Spanning&lt;/p&gt;
+&lt;p&gt;  Multiple disks appear to file system as one large disk&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Mirroring&lt;/p&gt;
+&lt;p&gt;  Write redundantly to multiple disks. Read from one.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Striping&quot;&gt;&lt;a href=&quot;#Striping&quot; class=&quot;headerlink&quot; title=&quot;Striping&quot;&gt;&lt;/a&gt;Striping&lt;/h4&gt;&lt;p&gt;One disk keep one striping unit data and then the next disk keep next one string unit data and keep doing this.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Advantages: Increase parallelism.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Disadvantages: Worse reliability, higher variance and heterogenious disks will reduce the saving access time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In general, performance is better with larger striping unit, which can reduce seek time&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Probability of N-disk system failing is: 1-(1-fail)^N&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Redundant-Array-of-Inexpensive-Disks-RAID&quot;&gt;&lt;a href=&quot;#Redundant-Array-of-Inexpensive-Disks-RAID&quot; class=&quot;headerlink&quot; title=&quot;Redundant Array of Inexpensive Disks (RAID)&quot;&gt;&lt;/a&gt;Redundant Array of Inexpensive Disks (RAID)&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;level 1&lt;/p&gt;
+&lt;p&gt;  Just mirroring.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;level 2&lt;/p&gt;
+&lt;p&gt;  Similar to memory’s ECC, use serveal disks to check bits.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;level 3&lt;/p&gt;
+&lt;p&gt;  Use one disk to maintain parity bits.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;level 4&lt;/p&gt;
+&lt;p&gt;  Use one disk to maintain parity blocks.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;level 5&lt;/p&gt;
+&lt;p&gt;  Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Flash-Memory&quot;&gt;&lt;a href=&quot;#Flash-Memory&quot; class=&quot;headerlink&quot; title=&quot;Flash Memory&quot;&gt;&lt;/a&gt;Flash Memory&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Technologies of Flash&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;NOR: Byte addressable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Wear leveling&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Writing problem: To change zeroes to ones, must erase entire block.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Spread writes/erasures across entire drive.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Using flash traslation layer(FTL) and log-structured file system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Crash-Resiliency&quot;&gt;&lt;a href=&quot;#Crash-Resiliency&quot; class=&quot;headerlink&quot; title=&quot;Crash Resiliency&quot;&gt;&lt;/a&gt;Crash Resiliency&lt;/h3&gt;&lt;h3 id=&quot;Naming-and-dirctories&quot;&gt;&lt;a href=&quot;#Naming-and-dirctories&quot; class=&quot;headerlink&quot; title=&quot;Naming and dirctories&quot;&gt;&lt;/a&gt;Naming and dirctories&lt;/h3&gt;&lt;h3 id=&quot;File-systems-in-different-OS&quot;&gt;&lt;a href=&quot;#File-systems-in-different-OS&quot; class=&quot;headerlink&quot; title=&quot;File systems in different OS&quot;&gt;&lt;/a&gt;File systems in different OS&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      This is a review of file systems, and focus on F5SF, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS
+    
+    </summary>
+    
+      <category term="Operating Systems" scheme="http://zhaot777.github.io/categories/Operating-Systems/"/>
+    
+    
+      <category term="OS" scheme="http://zhaot777.github.io/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>To Do List</title>
