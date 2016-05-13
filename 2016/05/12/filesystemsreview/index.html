@@ -59,20 +59,24 @@
 
 
 
-<meta name="description" content="This is a review of file systems, and focus on F5SF, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
+<meta name="description" content="This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="File Systems Review">
 <meta property="og:url" content="http://zhaot777.github.io/2016/05/12/filesystemsreview/index.html">
 <meta property="og:site_name" content="Steven's Blog">
-<meta property="og:description" content="This is a review of file systems, and focus on F5SF, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
+<meta property="og:description" content="This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
 <meta property="og:image" content="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7040/26388472283_d457c0580f_b.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png">
-<meta property="og:updated_time" content="2016-05-13T07:34:03.495Z">
+<meta property="og:image" content="https://farm8.staticflickr.com/7251/26387400194_a85f1f718a_b.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7589/26387505004_aabd34527c_b.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg">
+<meta property="og:updated_time" content="2016-05-13T18:50:45.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="File Systems Review">
-<meta name="twitter:description" content="This is a review of file systems, and focus on F5SF, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
+<meta name="twitter:description" content="This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
 <meta name="twitter:image" content="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg">
 
 
@@ -323,119 +327,146 @@
 <li>Permanent storage</li>
 <li>Quick, easy and efficient</li>
 </ul>
-<h3 id="The-Basics-of-File-Systems"><a href="#The-Basics-of-File-Systems" class="headerlink" title="The Basics of File Systems"></a>The Basics of File Systems</h3><h4 id="Disk-Architecture"><a href="#Disk-Architecture" class="headerlink" title="Disk Architecture"></a>Disk Architecture</h4><p><img src="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg" width="400" height="300" alt="angular_bootstrap"></p>
+<h3 id="The-Basics-of-File-Systems"><a href="#The-Basics-of-File-Systems" class="headerlink" title="The Basics of File Systems"></a>The Basics of File Systems</h3><h4 id="Disk-Architecture"><a href="#Disk-Architecture" class="headerlink" title="Disk Architecture"></a>Disk Architecture</h4><p><img src="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg" width="400" height="280" alt="disk_architecture"></p>
 <ul>
-<li><p>Have multiple platters and each one have top and bottom heads.</p>
-</li>
-<li><p>The smallest addressable unit is a sector. Each platter contains many tracks and each track contains many sectors. The same vertical’s tracks is one cylinder.</p>
-</li>
-<li><p>disk address = (head/surface#, cylinder/track#, sector#)</p>
-</li>
+<li>Have multiple platters and each one have top and bottom heads.</li>
+<li>The smallest addressable unit is a sector. Each platter contains many tracks and each track contains many sectors. The same vertical’s tracks is one cylinder.</li>
+<li>disk address = (head/surface#, cylinder/track#, sector#)</li>
 </ul>
 <h4 id="S5FS"><a href="#S5FS" class="headerlink" title="S5FS"></a>S5FS</h4><p>Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression</p>
 <ol>
-<li><p>Layout</p>
-<p> <img src="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg" width="180" height="280" alt="angular_bootstrap"></p>
-<p> The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.</p>
+<li><p>layout</p>
+<p> <img src="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg" width="170" height="250" alt="S5FS"></p>
+<ul>
+<li>The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.</li>
+</ul>
 </li>
 <li><p>Superblock</p>
 <ul>
-<li><p>Contains the head of the free list</p>
-<p>  Can address up to 100 free disk blocks, and the last pointer point to additional free disk blocks, etc.</p>
-</li>
-<li><p>Maintain a free inode list (inode cache)</p>
-<p>  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.</p>
-</li>
+<li>Contains the head of the free list:<br>  Can address up to 100 free disk blocks, and the last pointer point to additional free disk blocks, etc.</li>
+<li>Maintain a free inode list (inode cache):<br>  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.</li>
 </ul>
 </li>
-<li><p>I-list</p>
-<p> For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map</p>
+<li>I-list<ul>
+<li>For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map</li>
+</ul>
 </li>
 </ol>
 <ul>
 <li><p>Disk map</p>
-<p>  <img src="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg" width="450" height="350" alt="angular_bootstrap"></p>
+<p>  <img src="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg" width="450" height="320" alt="Disk map"></p>
 <p>  0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.</p>
 </li>
 </ul>
 <h4 id="Improvement-of-S5FS"><a href="#Improvement-of-S5FS" class="headerlink" title="Improvement of S5FS"></a>Improvement of S5FS</h4><p>Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)</p>
 <ul>
-<li><p>Increase block size</p>
+<li>Increase block size</li>
+<li>Minimizing seek time<ul>
+<li>Use cylinder groups to put related data in the same cylinde group</li>
+</ul>
 </li>
-<li><p>Minimizing seek time:<br>  Use cylinder groups to put related data in the same cylinde group</p>
+<li>Minimizing Latency<ul>
+<li>Block interleaving</li>
+</ul>
 </li>
-<li><p>Minimizing Latency:<br>  Block interleaving</p>
+<li><p>Log-Structured File System (LFS)</p>
+<p>  <img src="https://farm8.staticflickr.com/7040/26388472283_d457c0580f_b.jpg" width="400" height="100" alt="LFS"></p>
+<ul>
+<li>Main principles: nerver delete, append only.</li>
+<li>Inode Map: keep the updated inode, and each inode map piece is appended to log. </li>
+<li>Use checkpoint file (can have previous and current version) which is not belong to log to keeps track of all inode map pieces.</li>
+</ul>
 </li>
 </ul>
 <h3 id="Multiple-Disks"><a href="#Multiple-Disks" class="headerlink" title="Multiple Disks"></a>Multiple Disks</h3><h4 id="Benefits-of-Multiple-Disks"><a href="#Benefits-of-Multiple-Disks" class="headerlink" title="Benefits of Multiple Disks"></a>Benefits of Multiple Disks</h4><ul>
-<li><p>Hold more data</p>
-</li>
-<li><p>Can be stored redundantly, increase reliability and availability</p>
-</li>
-<li><p>Can spread data, allowing parallel access, increase effective access time</p>
-</li>
+<li>Hold more data</li>
+<li>Can be stored redundantly, increase reliability and availability</li>
+<li>Can spread data, allowing parallel access, increase effective access time</li>
 </ul>
-<h4 id="Logical-Volume-Manager-LVM"><a href="#Logical-Volume-Manager-LVM" class="headerlink" title="Logical Volume Manager (LVM)"></a>Logical Volume Manager (LVM)</h4><p><img src="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png" width="400" height="200" alt="angular_bootstrap"></p>
+<h4 id="Logical-Volume-Manager-LVM"><a href="#Logical-Volume-Manager-LVM" class="headerlink" title="Logical Volume Manager (LVM)"></a>Logical Volume Manager (LVM)</h4><p><img src="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png" width="350" height="150" alt="LVM"></p>
 <p>Manage multiple disks and try not change existing file systems much.</p>
 <ul>
-<li><p>Spanning</p>
-<p>  Multiple disks appear to file system as one large disk</p>
-</li>
-<li><p>Mirroring</p>
-<p>  Write redundantly to multiple disks. Read from one.</p>
-</li>
+<li>Spanning: Multiple disks appear to file system as one large disk</li>
+<li>Mirroring: Write redundantly to multiple disks. Read from one.</li>
 </ul>
 <h4 id="Striping"><a href="#Striping" class="headerlink" title="Striping"></a>Striping</h4><p>One disk keep one striping unit data and then the next disk keep next one string unit data and keep doing this.</p>
 <ul>
-<li><p>Advantages: Increase parallelism.</p>
-</li>
-<li><p>Disadvantages: Worse reliability, higher variance and heterogenious disks will reduce the saving access time.</p>
-</li>
-<li><p>In general, performance is better with larger striping unit, which can reduce seek time</p>
-</li>
-<li><p>Probability of N-disk system failing is: 1-(1-fail)^N</p>
-</li>
+<li>Advantages: Increase parallelism.</li>
+<li>Disadvantages: Worse reliability, higher variance and heterogenious disks will reduce the saving access time.</li>
+<li>In general, performance is better with larger striping unit, which can reduce seek time</li>
+<li>Probability of N-disk system failing is: 1-(1-fail)^N</li>
 </ul>
 <h4 id="Redundant-Array-of-Inexpensive-Disks-RAID"><a href="#Redundant-Array-of-Inexpensive-Disks-RAID" class="headerlink" title="Redundant Array of Inexpensive Disks (RAID)"></a>Redundant Array of Inexpensive Disks (RAID)</h4><ul>
-<li><p>level 1</p>
-<p>  Just mirroring.</p>
-</li>
-<li><p>level 2</p>
-<p>  Similar to memory’s ECC, use serveal disks to check bits.</p>
-</li>
-<li><p>level 3</p>
-<p>  Use one disk to maintain parity bits.</p>
-</li>
-<li><p>level 4</p>
-<p>  Use one disk to maintain parity blocks.</p>
-</li>
-<li><p>level 5</p>
-<p>  Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.</p>
-</li>
+<li>level 1:<br>  Just mirroring.</li>
+<li>level 2:<br>  Similar to memory’s ECC, use serveal disks to check bits.</li>
+<li>level 3:<br>  Use one disk to maintain parity bits.</li>
+<li>level 4:<br>  Use one disk to maintain parity blocks.</li>
+<li>level 5:<br>  Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.</li>
 </ul>
 <h3 id="Flash-Memory"><a href="#Flash-Memory" class="headerlink" title="Flash Memory"></a>Flash Memory</h3><ol>
 <li><p>Technologies of Flash</p>
 <ul>
-<li><p>NOR: Byte addressable.</p>
-</li>
-<li><p>NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.</p>
-</li>
+<li>NOR: Byte addressable.</li>
+<li>NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.</li>
 </ul>
 </li>
 </ol>
 <ol>
 <li><p>Wear leveling</p>
 <ul>
-<li><p>Writing problem: To change zeroes to ones, must erase entire block.</p>
+<li>Writing problem: To change zeroes to ones, must erase entire block.</li>
+<li>Spread writes/erasures across entire drive.</li>
+<li>Using flash traslation layer(FTL) and log-structured file system.</li>
+</ul>
 </li>
-<li><p>Spread writes/erasures across entire drive.</p>
+</ol>
+<h3 id="Crash-Resiliency"><a href="#Crash-Resiliency" class="headerlink" title="Crash Resiliency"></a>Crash Resiliency</h3><h4 id="Crash-problem"><a href="#Crash-problem" class="headerlink" title="Crash problem"></a>Crash problem</h4><ul>
+<li>Disk update, gather all dirty blocks, which is done one disk block at a time.</li>
+<li>In S5fs and FFS, the lower level file system can sequence disk writes in any order.</li>
+</ul>
+<h4 id="Dealing-with-Crashes"><a href="#Dealing-with-Crashes" class="headerlink" title="Dealing with Crashes"></a>Dealing with Crashes</h4><ol>
+<li><p>Soft Updates</p>
+<ul>
+<li>Consistency-preserving approach: order disk operations to preserve meta-data consistency.</li>
+<li>Have problems. In reality, in order to save the numver of disk writes, multiple objects can be packed into a diks block and will make a cycle in the topological order, and breaking circular dependency will slow the preformance.</li>
+</ul>
 </li>
-<li><p>Using flash traslation layer(FTL) and log-structured file system.</p>
+<li><p>Journaling</p>
+<p> <img src="https://farm8.staticflickr.com/7251/26387400194_a85f1f718a_b.jpg" width="400" height="60" alt="journaling"></p>
+<ul>
+<li>Use transaction idea, a journal is append-only, and it is a separate part of the disk(can add to any file system).</li>
+<li>Append a commit record, when it’s time to update the file system, write to journal first, and write data to file system only after the commit record is writeen to the journal.</li>
+<li>Undo journaling(record previous contents), redo journaling(record new contents).</li>
+<li>Recovery will take the file system into a consistent state at a transaction boundary, and copying a disk block to the file system is idempotent.</li>
+</ul>
+</li>
+<li><p>Shadow paging</p>
+<ul>
+<li><p>Based on copy-on-write ideas</p>
+<p>  <img src="https://farm8.staticflickr.com/7589/26387505004_aabd34527c_b.jpg" width="400" height="240" alt="shadow_paging"></p>
 </li>
 </ul>
 </li>
 </ol>
-<h3 id="Crash-Resiliency"><a href="#Crash-Resiliency" class="headerlink" title="Crash Resiliency"></a>Crash Resiliency</h3><h3 id="Naming-and-dirctories"><a href="#Naming-and-dirctories" class="headerlink" title="Naming and dirctories"></a>Naming and dirctories</h3><h3 id="File-systems-in-different-OS"><a href="#File-systems-in-different-OS" class="headerlink" title="File systems in different OS"></a>File systems in different OS</h3>
+<h3 id="Naming-and-Directories"><a href="#Naming-and-Directories" class="headerlink" title="Naming and Directories"></a>Naming and Directories</h3><h4 id="Directories"><a href="#Directories" class="headerlink" title="Directories"></a>Directories</h4><ol>
+<li>S5FS Directories<ul>
+<li>Each entry is 32 bytes.</li>
+</ul>
+</li>
+<li>FFS Directories:<ul>
+<li>No restrictions on names.</li>
+<li>Maintain the last entry to get the free space.</li>
+<li>Use Hash table or B+ tree to look for a file name.</li>
+<li>Use extensible Hashing, the low-order i bits of hi(x) are the same in hi+1(x)</li>
+<li>B+ tree, internal nodes contain no data, just keys, leaf node are linked to ease sorted sequential traversal</li>
+</ul>
+</li>
+</ol>
+<h4 id="Name-Space-Management"><a href="#Name-Space-Management" class="headerlink" title="Name-Space Management"></a>Name-Space Management</h4><ul>
+<li>For Windows, it use drives to make the name-space appear uniform. For Unix, it use file system mounting.</li>
+</ul>
+<h3 id="File-systems-Summary"><a href="#File-systems-Summary" class="headerlink" title="File systems Summary"></a>File systems Summary</h3><p><img src="https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg" width="450" height="300" alt="file_system_summary"></p>
+
       
     </div>
 
@@ -649,7 +680,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Basics-of-File-Systems"><span class="nav-number">2.</span> <span class="nav-text">The Basics of File Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Disk-Architecture"><span class="nav-number">2.1.</span> <span class="nav-text">Disk Architecture</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#S5FS"><span class="nav-number">2.2.</span> <span class="nav-text">S5FS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Improvement-of-S5FS"><span class="nav-number">2.3.</span> <span class="nav-text">Improvement of S5FS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiple-Disks"><span class="nav-number">3.</span> <span class="nav-text">Multiple Disks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Benefits-of-Multiple-Disks"><span class="nav-number">3.1.</span> <span class="nav-text">Benefits of Multiple Disks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Logical-Volume-Manager-LVM"><span class="nav-number">3.2.</span> <span class="nav-text">Logical Volume Manager (LVM)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Striping"><span class="nav-number">3.3.</span> <span class="nav-text">Striping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Redundant-Array-of-Inexpensive-Disks-RAID"><span class="nav-number">3.4.</span> <span class="nav-text">Redundant Array of Inexpensive Disks (RAID)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flash-Memory"><span class="nav-number">4.</span> <span class="nav-text">Flash Memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Crash-Resiliency"><span class="nav-number">5.</span> <span class="nav-text">Crash Resiliency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Naming-and-dirctories"><span class="nav-number">6.</span> <span class="nav-text">Naming and dirctories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-systems-in-different-OS"><span class="nav-number">7.</span> <span class="nav-text">File systems in different OS</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Basics-of-File-Systems"><span class="nav-number">2.</span> <span class="nav-text">The Basics of File Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Disk-Architecture"><span class="nav-number">2.1.</span> <span class="nav-text">Disk Architecture</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#S5FS"><span class="nav-number">2.2.</span> <span class="nav-text">S5FS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Improvement-of-S5FS"><span class="nav-number">2.3.</span> <span class="nav-text">Improvement of S5FS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiple-Disks"><span class="nav-number">3.</span> <span class="nav-text">Multiple Disks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Benefits-of-Multiple-Disks"><span class="nav-number">3.1.</span> <span class="nav-text">Benefits of Multiple Disks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Logical-Volume-Manager-LVM"><span class="nav-number">3.2.</span> <span class="nav-text">Logical Volume Manager (LVM)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Striping"><span class="nav-number">3.3.</span> <span class="nav-text">Striping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Redundant-Array-of-Inexpensive-Disks-RAID"><span class="nav-number">3.4.</span> <span class="nav-text">Redundant Array of Inexpensive Disks (RAID)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flash-Memory"><span class="nav-number">4.</span> <span class="nav-text">Flash Memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Crash-Resiliency"><span class="nav-number">5.</span> <span class="nav-text">Crash Resiliency</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Crash-problem"><span class="nav-number">5.1.</span> <span class="nav-text">Crash problem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dealing-with-Crashes"><span class="nav-number">5.2.</span> <span class="nav-text">Dealing with Crashes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Naming-and-Directories"><span class="nav-number">6.</span> <span class="nav-text">Naming and Directories</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Directories"><span class="nav-number">6.1.</span> <span class="nav-text">Directories</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Name-Space-Management"><span class="nav-number">6.2.</span> <span class="nav-text">Name-Space Management</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-systems-Summary"><span class="nav-number">7.</span> <span class="nav-text">File systems Summary</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
