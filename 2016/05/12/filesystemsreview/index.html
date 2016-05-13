@@ -65,10 +65,16 @@
 <meta property="og:url" content="http://zhaot777.github.io/2016/05/12/filesystemsreview/index.html">
 <meta property="og:site_name" content="Steven's Blog">
 <meta property="og:description" content="This is a review of file systems, and focus on F5SF, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
-<meta property="og:updated_time" content="2016-05-13T06:17:45.123Z">
+<meta property="og:image" content="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7381/26710141150_1b9ae1afa1_b.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png">
+<meta property="og:updated_time" content="2016-05-13T07:17:15.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="File Systems Review">
 <meta name="twitter:description" content="This is a review of file systems, and focus on F5SF, multiple disks, flash memory, crash Resiliency, naming and dirctories, and file systems in different OS">
+<meta name="twitter:image" content="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg">
 
 
 
@@ -318,7 +324,9 @@
 <li>Permanent storage</li>
 <li>Quick, easy and efficient</li>
 </ul>
-<h3 id="The-Basics-of-File-Systems"><a href="#The-Basics-of-File-Systems" class="headerlink" title="The Basics of File Systems"></a>The Basics of File Systems</h3><h4 id="Disk-Architecture"><a href="#Disk-Architecture" class="headerlink" title="Disk Architecture"></a>Disk Architecture</h4><ul>
+<h3 id="The-Basics-of-File-Systems"><a href="#The-Basics-of-File-Systems" class="headerlink" title="The Basics of File Systems"></a>The Basics of File Systems</h3><h4 id="Disk-Architecture"><a href="#Disk-Architecture" class="headerlink" title="Disk Architecture"></a>Disk Architecture</h4><figure><br>    <img src="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg" width="400" height="300" alt="angular_bootstrap"><br></figure>
+
+<ul>
 <li><p>Have multiple platters and each one have top and bottom heads.</p>
 </li>
 <li><p>The smallest addressable unit is a sector. Each platter contains many tracks and each track contains many sectors. The same vertical’s tracks is one cylinder.</p>
@@ -331,6 +339,11 @@
 <li><p>Layout</p>
 <p> The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.</p>
 </li>
+</ol>
+<figure><br>    <img src="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg" width="180" height="300" alt="angular_bootstrap"><br></figure>
+
+
+<ol>
 <li><p>Superblock</p>
 <ul>
 <li><p>Contains the head of the free list</p>
@@ -342,17 +355,14 @@
 </ul>
 </li>
 <li><p>I-list</p>
-<ul>
-<li><p>For each inode it contains:    </p>
-<p>  Device, inode number, file type, link count, owner group, size and disk map.</p>
-</li>
-<li><p>Disk map </p>
-<p>  0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.</p>
-</li>
-</ul>
 </li>
 </ol>
-<h4 id="Improvement-of-S5FS"><a href="#Improvement-of-S5FS" class="headerlink" title="Improvement of S5FS"></a>Improvement of S5FS</h4><p>Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)</p>
+<figure><br>    <img src="https://farm8.staticflickr.com/7381/26710141150_1b9ae1afa1_b.jpg" width="180" height="300" alt="angular_bootstrap"><br></figure>
+
+<figure><br>        <img src="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg" width="450" height="350" alt="angular_bootstrap"><br></figure>
+
+<pre><code>0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.
+</code></pre><h4 id="Improvement-of-S5FS"><a href="#Improvement-of-S5FS" class="headerlink" title="Improvement of S5FS"></a>Improvement of S5FS</h4><p>Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)</p>
 <ul>
 <li><p>Increase block size</p>
 </li>
@@ -369,7 +379,9 @@
 <li><p>Can spread data, allowing parallel access, increase effective access time</p>
 </li>
 </ul>
-<h4 id="Logical-Volume-Manager-LVM"><a href="#Logical-Volume-Manager-LVM" class="headerlink" title="Logical Volume Manager (LVM)"></a>Logical Volume Manager (LVM)</h4><p>Manage multiple disks and try not change existing file systems much.</p>
+<h4 id="Logical-Volume-Manager-LVM"><a href="#Logical-Volume-Manager-LVM" class="headerlink" title="Logical Volume Manager (LVM)"></a>Logical Volume Manager (LVM)</h4><figure><br>    <img src="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png" width="450" height="210" alt="angular_bootstrap"><br></figure>
+
+<p>Manage multiple disks and try not change existing file systems much.</p>
 <ul>
 <li><p>Spanning</p>
 <p>  Multiple disks appear to file system as one large disk</p>
