@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Angular.js," />
+  <meta name="keywords" content="OS, virtual memory," />
 
 
 
@@ -59,20 +59,16 @@
 
 
 
-<meta name="description" content="This demo is a practice work for familiarizing Angular.js. The todo list can add new tasks, delete tasks and change the tasks condition from doing to done.">
+<meta name="description" content="This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="To Do List">
-<meta property="og:url" content="http://zhaot777.github.io/2016/03/18/todolist/index.html">
+<meta property="og:title" content="Memory Management Review">
+<meta property="og:url" content="http://zhaot777.github.io/2016/05/15/memoryreview/index.html">
 <meta property="og:site_name" content="Steven's Blog">
-<meta property="og:description" content="This demo is a practice work for familiarizing Angular.js. The todo list can add new tasks, delete tasks and change the tasks condition from doing to done.">
-<meta property="og:image" content="https://farm2.staticflickr.com/1604/25284321663_f4c97b9a5e_o.jpg">
-<meta property="og:image" content="https://farm2.staticflickr.com/1650/25601037730_045a9369af_o.png">
-<meta property="og:image" content="https://farm2.staticflickr.com/1536/25268890654_5310af6234_o.png">
-<meta property="og:updated_time" content="2016-03-19T22:11:54.335Z">
+<meta property="og:description" content="This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.">
+<meta property="og:updated_time" content="2016-05-15T20:19:28.012Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="To Do List">
-<meta name="twitter:description" content="This demo is a practice work for familiarizing Angular.js. The todo list can add new tasks, delete tasks and change the tasks condition from doing to done.">
-<meta name="twitter:image" content="https://farm2.staticflickr.com/1604/25284321663_f4c97b9a5e_o.jpg">
+<meta name="twitter:title" content="Memory Management Review">
+<meta name="twitter:description" content="This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.">
 
 
 
@@ -90,7 +86,7 @@
   };
 </script>
 
-  <title> To Do List | Steven's Blog </title>
+  <title> Memory Management Review | Steven's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -252,7 +248,7 @@
             
             
               
-                To Do List
+                Memory Management Review
               
             
           </h1>
@@ -264,8 +260,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-18T01:17:14-07:00" content="2016-03-18">
-              2016-03-18
+            <time itemprop="dateCreated" datetime="2016-05-15T12:12:35-07:00" content="2016-05-15">
+              2016-05-15
             </time>
           </span>
 
@@ -278,8 +274,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Project/" itemprop="url" rel="index">
-                    <span itemprop="name">Project</span>
+                  <a href="/categories/Operating-Systems/" itemprop="url" rel="index">
+                    <span itemprop="name">Operating Systems</span>
                   </a>
                 </span>
 
@@ -294,8 +290,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/18/todolist/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/18/todolist/" itemprop="commentsCount"></span>
+                <a href="/2016/05/15/memoryreview/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/15/memoryreview/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -317,44 +313,8 @@
       
 
       
-        <figure><br>    <img src="https://farm2.staticflickr.com/1604/25284321663_f4c97b9a5e_o.jpg" width="863" height="430" alt="angular_bootstrap"><br></figure>
-
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p><strong>AngularJS</strong> is an open-sourced web application JavaScript framework designed for Single Page Applications (SPA). An SPA is a web application or website that fits into a single web page. It is a design choice intended to provide a more fluid user experience. Angular’s data binding and dependency injection make your application’s components clear and succinct. If you are building a game or a computationally intensive math application, Angular may not fit your particular requirements, however, for generic web applications it should serve as a viable framework to build upon.</p>
-
-<p><strong>Bootstrap</strong> is a free front-end framework for faster and easier web development. It includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins. Bootstrap also gives you the ability to easily create responsive designs</p>
-
-<h3 id="Instructions"><a href="#Instructions" class="headerlink" title="Instructions"></a>Instructions</h3><p>Implement a TODO list web application with the following functionality:</p>
-<ul>
-<li>Initial page with empty “TODO list”</li>
-<li>User has the ability to Add/Delete a TODO item</li>
-<li>User has the ability to mark one item as completed</li>
-<li>User has the ability to view TODO list items in different</li>
-<li>tabs based on the following states:<ul>
-<li>All</li>
-<li>Active</li>
-<li>Completed</li>
-</ul>
-</li>
-<li>A search bar is provided, so that the user is able to search for a particular TODO item<br>Bonus Functionality<br>The user is only presented with the option to delete a TODO item when they are hovering the mouse over that item</li>
-</ul>
-<blockquote>
-<p><strong>Note:</strong></p>
-<ol>
-<li>To fit the requirement, we can use 2 panels, one for searching tasks and another one for adding tasks.</li>
-<li>For add, completed and delete, we can use controller to change the status of item in our data.</li>
-<li>For searching item, we can create a filter, when click the search button, show the filtered data.</li>
-<li>The tricky part is to synchronized the search list and data list, when we click the delete button in either of this list, we need to delete the the same item in another list.</li>
-</ol>
-</blockquote>
-<h3 id="Demo-Display"><a href="#Demo-Display" class="headerlink" title="Demo Display"></a>Demo Display</h3><p></p><p>Initial page:<br><img src="https://farm2.staticflickr.com/1650/25601037730_045a9369af_o.png" width="1666" height="1042" alt="todolist1"><br></p><p></p>
-<p></p><p>After add tasks and do search:<br><img src="https://farm2.staticflickr.com/1536/25268890654_5310af6234_o.png" width="1625" height="1630" alt="todolist2"></p>
-<p></p><p></p>
-<ul>
-<li><a href="https://github.com/zhaot777/angularjs_todolist.git" target="_blank" rel="external">github code link</a></li>
-</ul>
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <h1 id="Virtual-Memory-Basic"><a href="#Virtual-Memory-Basic" class="headerlink" title="Virtual Memory Basic"></a>Virtual Memory Basic</h1><h2 id="Virtual-Address-Concept"><a href="#Virtual-Address-Concept" class="headerlink" title="Virtual Address Concept"></a>Virtual Address Concept</h2><h2 id="Memory-Management-in-the-Early-Days"><a href="#Memory-Management-in-the-Early-Days" class="headerlink" title="Memory Management in the Early Days"></a>Memory Management in the Early Days</h2><h1 id="Hardware-Support-for-Virtual-Memory"><a href="#Hardware-Support-for-Virtual-Memory" class="headerlink" title="Hardware Support for Virtual Memory"></a>Hardware Support for Virtual Memory</h1><h2 id="Forward-Mapped-Page-Tables"><a href="#Forward-Mapped-Page-Tables" class="headerlink" title="Forward-Mapped Page Tables"></a>Forward-Mapped Page Tables</h2><h2 id="Linear-Page-Tables"><a href="#Linear-Page-Tables" class="headerlink" title="Linear Page Tables"></a>Linear Page Tables</h2><h2 id="Hashed-Page-Tables"><a href="#Hashed-Page-Tables" class="headerlink" title="Hashed Page Tables"></a>Hashed Page Tables</h2><h2 id="Translation-Lookaside-Buffers-TLB"><a href="#Translation-Lookaside-Buffers-TLB" class="headerlink" title="Translation Lookaside Buffers (TLB)"></a>Translation Lookaside Buffers (TLB)</h2><h2 id="64-Bit-Issues"><a href="#64-Bit-Issues" class="headerlink" title="64-Bit Issues"></a>64-Bit Issues</h2><h2 id="Virtualization-virtualize-virtual-memory"><a href="#Virtualization-virtualize-virtual-memory" class="headerlink" title="Virtualization (virtualize virtual memory)"></a>Virtualization (virtualize virtual memory)</h2><h1 id="Operating-System-Issues"><a href="#Operating-System-Issues" class="headerlink" title="Operating System Issues"></a>Operating System Issues</h1><h2 id="General-Concerns"><a href="#General-Concerns" class="headerlink" title="General Concerns"></a>General Concerns</h2><h2 id="Representative-Systems"><a href="#Representative-Systems" class="headerlink" title="Representative Systems"></a>Representative Systems</h2><h2 id="Copy-on-Write-and-Fork-shadow-object"><a href="#Copy-on-Write-and-Fork-shadow-object" class="headerlink" title="Copy on Write and Fork (shadow object)"></a>Copy on Write and Fork (shadow object)</h2><h2 id="Backing-Store-Issues"><a href="#Backing-Store-Issues" class="headerlink" title="Backing Store Issues"></a>Backing Store Issues</h2><!-- Go to www.addthis.com/dashboard to customize your tools -->
 <div class="addthis_sharing_toolbox"></div>
-
       
     </div>
 
@@ -368,7 +328,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Angular-js/" rel="tag">#Angular.js</a>
+            <a href="/tags/OS-virtual-memory/" rel="tag">#OS, virtual memory</a>
           
         </div>
       
@@ -377,17 +337,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/01/webcrawler/" rel="next" title="Web Crawler">
-                <i class="fa fa-chevron-left"></i> Web Crawler
+              <a href="/2016/05/12/filesystemsreview/" rel="next" title="File Systems Review">
+                <i class="fa fa-chevron-left"></i> File Systems Review
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/12/filesystemsreview/" rel="prev" title="File Systems Review">
-                File Systems Review <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -572,7 +528,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instructions"><span class="nav-number">2.</span> <span class="nav-text">Instructions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo-Display"><span class="nav-number">3.</span> <span class="nav-text">Demo Display</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Virtual-Memory-Basic"><span class="nav-number">1.</span> <span class="nav-text">Virtual Memory Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Virtual-Address-Concept"><span class="nav-number">1.1.</span> <span class="nav-text">Virtual Address Concept</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory-Management-in-the-Early-Days"><span class="nav-number">1.2.</span> <span class="nav-text">Memory Management in the Early Days</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hardware-Support-for-Virtual-Memory"><span class="nav-number">2.</span> <span class="nav-text">Hardware Support for Virtual Memory</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Forward-Mapped-Page-Tables"><span class="nav-number">2.1.</span> <span class="nav-text">Forward-Mapped Page Tables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Page-Tables"><span class="nav-number">2.2.</span> <span class="nav-text">Linear Page Tables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashed-Page-Tables"><span class="nav-number">2.3.</span> <span class="nav-text">Hashed Page Tables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Translation-Lookaside-Buffers-TLB"><span class="nav-number">2.4.</span> <span class="nav-text">Translation Lookaside Buffers (TLB)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#64-Bit-Issues"><span class="nav-number">2.5.</span> <span class="nav-text">64-Bit Issues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Virtualization-virtualize-virtual-memory"><span class="nav-number">2.6.</span> <span class="nav-text">Virtualization (virtualize virtual memory)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Operating-System-Issues"><span class="nav-number">3.</span> <span class="nav-text">Operating System Issues</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Concerns"><span class="nav-number">3.1.</span> <span class="nav-text">General Concerns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Representative-Systems"><span class="nav-number">3.2.</span> <span class="nav-text">Representative Systems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Copy-on-Write-and-Fork-shadow-object"><span class="nav-number">3.3.</span> <span class="nav-text">Copy on Write and Fork (shadow object)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backing-Store-Issues"><span class="nav-number">3.4.</span> <span class="nav-text">Backing Store Issues</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -830,9 +786,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'zhaot777githubio';
-      var disqus_identifier = '2016/03/18/todolist/';
-      var disqus_title = 'To Do List';
-      var disqus_url = 'http://zhaot777.github.io/2016/03/18/todolist/';
+      var disqus_identifier = '2016/05/15/memoryreview/';
+      var disqus_title = 'Memory Management Review';
+      var disqus_url = 'http://zhaot777.github.io/2016/05/15/memoryreview/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

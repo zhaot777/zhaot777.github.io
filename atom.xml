@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhaot777.github.io/"/>
-  <updated>2016-05-13T19:05:58.235Z</updated>
+  <updated>2016-05-15T20:19:28.012Z</updated>
   <id>http://zhaot777.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Memory Management Review</title>
+    <link href="http://zhaot777.github.io/2016/05/15/memoryreview/"/>
+    <id>http://zhaot777.github.io/2016/05/15/memoryreview/</id>
+    <published>2016-05-15T19:12:35.285Z</published>
+    <updated>2016-05-15T20:19:28.012Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;Virtual-Memory-Basic&quot;&gt;&lt;a href=&quot;#Virtual-Memory-Basic&quot; class=&quot;headerlink&quot; title=&quot;Virtual Memory Basic&quot;&gt;&lt;/a&gt;Virtual Memory Basic&lt;/h1&gt;&lt;h2 id=&quot;Virtual-Address-Concept&quot;&gt;&lt;a href=&quot;#Virtual-Address-Concept&quot; class=&quot;headerlink&quot; title=&quot;Virtual Address Concept&quot;&gt;&lt;/a&gt;Virtual Address Concept&lt;/h2&gt;&lt;h2 id=&quot;Memory-Management-in-the-Early-Days&quot;&gt;&lt;a href=&quot;#Memory-Management-in-the-Early-Days&quot; class=&quot;headerlink&quot; title=&quot;Memory Management in the Early Days&quot;&gt;&lt;/a&gt;Memory Management in the Early Days&lt;/h2&gt;&lt;h1 id=&quot;Hardware-Support-for-Virtual-Memory&quot;&gt;&lt;a href=&quot;#Hardware-Support-for-Virtual-Memory&quot; class=&quot;headerlink&quot; title=&quot;Hardware Support for Virtual Memory&quot;&gt;&lt;/a&gt;Hardware Support for Virtual Memory&lt;/h1&gt;&lt;h2 id=&quot;Forward-Mapped-Page-Tables&quot;&gt;&lt;a href=&quot;#Forward-Mapped-Page-Tables&quot; class=&quot;headerlink&quot; title=&quot;Forward-Mapped Page Tables&quot;&gt;&lt;/a&gt;Forward-Mapped Page Tables&lt;/h2&gt;&lt;h2 id=&quot;Linear-Page-Tables&quot;&gt;&lt;a href=&quot;#Linear-Page-Tables&quot; class=&quot;headerlink&quot; title=&quot;Linear Page Tables&quot;&gt;&lt;/a&gt;Linear Page Tables&lt;/h2&gt;&lt;h2 id=&quot;Hashed-Page-Tables&quot;&gt;&lt;a href=&quot;#Hashed-Page-Tables&quot; class=&quot;headerlink&quot; title=&quot;Hashed Page Tables&quot;&gt;&lt;/a&gt;Hashed Page Tables&lt;/h2&gt;&lt;h2 id=&quot;Translation-Lookaside-Buffers-TLB&quot;&gt;&lt;a href=&quot;#Translation-Lookaside-Buffers-TLB&quot; class=&quot;headerlink&quot; title=&quot;Translation Lookaside Buffers (TLB)&quot;&gt;&lt;/a&gt;Translation Lookaside Buffers (TLB)&lt;/h2&gt;&lt;h2 id=&quot;64-Bit-Issues&quot;&gt;&lt;a href=&quot;#64-Bit-Issues&quot; class=&quot;headerlink&quot; title=&quot;64-Bit Issues&quot;&gt;&lt;/a&gt;64-Bit Issues&lt;/h2&gt;&lt;h2 id=&quot;Virtualization-virtualize-virtual-memory&quot;&gt;&lt;a href=&quot;#Virtualization-virtualize-virtual-memory&quot; class=&quot;headerlink&quot; title=&quot;Virtualization (virtualize virtual memory)&quot;&gt;&lt;/a&gt;Virtualization (virtualize virtual memory)&lt;/h2&gt;&lt;h1 id=&quot;Operating-System-Issues&quot;&gt;&lt;a href=&quot;#Operating-System-Issues&quot; class=&quot;headerlink&quot; title=&quot;Operating System Issues&quot;&gt;&lt;/a&gt;Operating System Issues&lt;/h1&gt;&lt;h2 id=&quot;General-Concerns&quot;&gt;&lt;a href=&quot;#General-Concerns&quot; class=&quot;headerlink&quot; title=&quot;General Concerns&quot;&gt;&lt;/a&gt;General Concerns&lt;/h2&gt;&lt;h2 id=&quot;Representative-Systems&quot;&gt;&lt;a href=&quot;#Representative-Systems&quot; class=&quot;headerlink&quot; title=&quot;Representative Systems&quot;&gt;&lt;/a&gt;Representative Systems&lt;/h2&gt;&lt;h2 id=&quot;Copy-on-Write-and-Fork-shadow-object&quot;&gt;&lt;a href=&quot;#Copy-on-Write-and-Fork-shadow-object&quot; class=&quot;headerlink&quot; title=&quot;Copy on Write and Fork (shadow object)&quot;&gt;&lt;/a&gt;Copy on Write and Fork (shadow object)&lt;/h2&gt;&lt;h2 id=&quot;Backing-Store-Issues&quot;&gt;&lt;a href=&quot;#Backing-Store-Issues&quot; class=&quot;headerlink&quot; title=&quot;Backing Store Issues&quot;&gt;&lt;/a&gt;Backing Store Issues&lt;/h2&gt;&lt;!-- Go to www.addthis.com/dashboard to customize your tools --&gt;
+&lt;div class=&quot;addthis_sharing_toolbox&quot;&gt;&lt;/div&gt;</content>
+    
+    <summary type="html">
+    
+      This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.
+    
+    </summary>
+    
+      <category term="Operating Systems" scheme="http://zhaot777.github.io/categories/Operating-Systems/"/>
+    
+    
+      <category term="OS, virtual memory" scheme="http://zhaot777.github.io/tags/OS-virtual-memory/"/>
+    
+  </entry>
   
   <entry>
     <title>File Systems Review</title>
