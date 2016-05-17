@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhaot777.github.io/"/>
-  <updated>2016-05-17T18:46:50.467Z</updated>
+  <updated>2016-05-17T18:50:05.318Z</updated>
   <id>http://zhaot777.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://zhaot777.github.io/2016/05/15/memoryreview/"/>
     <id>http://zhaot777.github.io/2016/05/15/memoryreview/</id>
     <published>2016-05-15T19:12:35.285Z</published>
-    <updated>2016-05-17T18:46:50.467Z</updated>
+    <updated>2016-05-17T18:50:05.318Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Virtual-Memory-Basic&quot;&gt;&lt;a href=&quot;#Virtual-Memory-Basic&quot; class=&quot;headerlink&quot; title=&quot;Virtual Memory Basic&quot;&gt;&lt;/a&gt;Virtual Memory Basic&lt;/h2&gt;&lt;h3 id=&quot;Virtual-Address-Concept&quot;&gt;&lt;a href=&quot;#Virtual-Address-Concept&quot; class=&quot;headerlink&quot; title=&quot;Virtual Address Concept&quot;&gt;&lt;/a&gt;Virtual Address Concept&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;Protect processes from on another&lt;/li&gt;
@@ -28,9 +28,10 @@
 &lt;li&gt;Provide efficient management of available storage&lt;/li&gt;
 &lt;li&gt;Use a virtual address to address any memory location in the 32-bit address space&lt;/li&gt;
 &lt;li&gt;Only headware use physical address(include processor) and OS manages the physical address space&lt;/li&gt;
-&lt;li&gt;Memory Management Unit (MMU), is used for indirect address translation. It translated virtual address into physical address.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Memory Management Unit (MMU), is used for indirect address translation. It translated virtual address into physical address.&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7534/26980709472_21687456f0_b.jpg&quot; width=&quot;400&quot; height=&quot;200&quot; alt=&quot;MMU&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7534/26980709472_21687456f0_b.jpg&quot; width=&quot;400&quot; height=&quot;200&quot; alt=&quot;MMU&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Memory-Management-in-the-Early-Days&quot;&gt;&lt;a href=&quot;#Memory-Management-in-the-Early-Days&quot; class=&quot;headerlink&quot; title=&quot;Memory Management in the Early Days&quot;&gt;&lt;/a&gt;Memory Management in the Early Days&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Memory Fence&lt;/p&gt;
 &lt;ul&gt;
@@ -201,7 +202,7 @@
 &lt;li&gt;&lt;p&gt;A page in a memory map, into which an object was mapped private, have an associated shadow object.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Shadow object tells you where to copy from when you need to perform copy-on-write.&lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg&quot; width=&quot;420&quot; height=&quot;280&quot; alt=&quot;Clock algorthm&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg&quot; width=&quot;420&quot; height=&quot;250&quot; alt=&quot;Clock algorthm&quot;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;

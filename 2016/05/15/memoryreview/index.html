@@ -73,7 +73,7 @@
 <meta property="og:image" content="https://farm8.staticflickr.com/7728/27008966701_abf3d06926_b.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7195/27008966741_f2cc810af9_b.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg">
-<meta property="og:updated_time" content="2016-05-17T18:46:50.467Z">
+<meta property="og:updated_time" content="2016-05-17T18:50:05.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Memory Management Review">
 <meta name="twitter:description" content="This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.">
@@ -328,9 +328,10 @@
 <li>Provide efficient management of available storage</li>
 <li>Use a virtual address to address any memory location in the 32-bit address space</li>
 <li>Only headware use physical address(include processor) and OS manages the physical address space</li>
-<li>Memory Management Unit (MMU), is used for indirect address translation. It translated virtual address into physical address.</li>
+<li><p>Memory Management Unit (MMU), is used for indirect address translation. It translated virtual address into physical address.</p>
+<p>  <img src="https://farm8.staticflickr.com/7534/26980709472_21687456f0_b.jpg" width="400" height="200" alt="MMU"></p>
+</li>
 </ul>
-<p><img src="https://farm8.staticflickr.com/7534/26980709472_21687456f0_b.jpg" width="400" height="200" alt="MMU"></p>
 <h3 id="Memory-Management-in-the-Early-Days"><a href="#Memory-Management-in-the-Early-Days" class="headerlink" title="Memory Management in the Early Days"></a>Memory Management in the Early Days</h3><ul>
 <li><p>Memory Fence</p>
 <ul>
@@ -501,7 +502,7 @@
 <li><p>A page in a memory map, into which an object was mapped private, have an associated shadow object.</p>
 </li>
 <li><p>Shadow object tells you where to copy from when you need to perform copy-on-write.</p>
-<p>  <img src="https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg" width="420" height="280" alt="Clock algorthm"></p>
+<p>  <img src="https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg" width="420" height="250" alt="Clock algorthm"></p>
 </li>
 </ul>
 </li>
