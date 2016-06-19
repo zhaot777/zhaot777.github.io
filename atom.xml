@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhaot777.github.io/"/>
-  <updated>2016-06-19T23:44:55.935Z</updated>
+  <updated>2016-06-19T23:53:23.145Z</updated>
   <id>http://zhaot777.github.io/</id>
   
   <author>
@@ -16,14 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Big Data Review</title>
     <link href="http://zhaot777.github.io/2016/06/19/DB_BigData/"/>
     <id>http://zhaot777.github.io/2016/06/19/DB_BigData/</id>
     <published>2016-06-19T23:37:11.872Z</published>
-    <updated>2016-06-19T23:44:55.935Z</updated>
+    <updated>2016-06-19T23:53:23.145Z</updated>
     
-    <content type="html">&lt;p&gt;title: Big Data Review&lt;br&gt;tags: Database, Big Data, Curriculum Review&lt;br&gt;category: Database&lt;/p&gt;
-&lt;h1 id=&quot;description-Basic-concept-of-Big-Data-and-useful-resources-about-Big-Data&quot;&gt;&lt;a href=&quot;#description-Basic-concept-of-Big-Data-and-useful-resources-about-Big-Data&quot; class=&quot;headerlink&quot; title=&quot;description: Basic concept of Big Data and useful resources about Big Data.&quot;&gt;&lt;/a&gt;description: Basic concept of Big Data and useful resources about Big Data.&lt;/h1&gt;&lt;h3 id=&quot;What-is-Big-Data&quot;&gt;&lt;a href=&quot;#What-is-Big-Data&quot; class=&quot;headerlink&quot; title=&quot;What is Big Data&quot;&gt;&lt;/a&gt;What is Big Data&lt;/h3&gt;&lt;ol&gt;
+    <content type="html">&lt;h3 id=&quot;What-is-Big-Data&quot;&gt;&lt;a href=&quot;#What-is-Big-Data&quot; class=&quot;headerlink&quot; title=&quot;What is Big Data&quot;&gt;&lt;/a&gt;What is Big Data&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Big Data is data that is ‘too big’ to be stored in a single machine, and/or processed by a single machine.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -106,23 +105,25 @@
     
     <summary type="html">
     
-      &lt;p&gt;title: Big Data Review&lt;br&gt;tags: Database, Big Data, Curriculum Review&lt;br&gt;category: Database&lt;/p&gt;
-&lt;h1 id=&quot;description-Basic-concept-of-Big-
+      Basic concept of Big Data and useful resources about Big Data.
     
     </summary>
     
+      <category term="Database" scheme="http://zhaot777.github.io/categories/Database/"/>
+    
+    
+      <category term="Database, Big Data, Curriculum Review" scheme="http://zhaot777.github.io/tags/Database-Big-Data-Curriculum-Review/"/>
     
   </entry>
   
   <entry>
-    <title></title>
+    <title>NoSQL Review</title>
     <link href="http://zhaot777.github.io/2016/06/19/DB_NoSQL/"/>
     <id>http://zhaot777.github.io/2016/06/19/DB_NoSQL/</id>
     <published>2016-06-19T23:37:11.871Z</published>
-    <updated>2016-06-19T23:46:24.371Z</updated>
+    <updated>2016-06-19T23:53:37.381Z</updated>
     
-    <content type="html">&lt;p&gt;title: NoSQL Review&lt;br&gt;tags: Database, NoSQL, Curriculum Review&lt;br&gt;category: Database&lt;/p&gt;
-&lt;h1 id=&quot;description-Basic-concept-of-NoSQL-and-4-types-of-NoSQL-Databases&quot;&gt;&lt;a href=&quot;#description-Basic-concept-of-NoSQL-and-4-types-of-NoSQL-Databases&quot; class=&quot;headerlink&quot; title=&quot;description: Basic concept of NoSQL and 4 types of NoSQL Databases&quot;&gt;&lt;/a&gt;description: Basic concept of NoSQL and 4 types of NoSQL Databases&lt;/h1&gt;&lt;h3 id=&quot;What-is-NoSQL&quot;&gt;&lt;a href=&quot;#What-is-NoSQL&quot; class=&quot;headerlink&quot; title=&quot;What is NoSQL&quot;&gt;&lt;/a&gt;What is NoSQL&lt;/h3&gt;&lt;ol&gt;
+    <content type="html">&lt;h3 id=&quot;What-is-NoSQL&quot;&gt;&lt;a href=&quot;#What-is-NoSQL&quot; class=&quot;headerlink&quot; title=&quot;What is NoSQL&quot;&gt;&lt;/a&gt;What is NoSQL&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Need for NoSQL&lt;ul&gt;
 &lt;li&gt;Lots of new and new types of data&lt;/li&gt;
 &lt;li&gt;Hard to use a relational model&lt;/li&gt;
@@ -189,23 +190,25 @@
     
     <summary type="html">
     
-      &lt;p&gt;title: NoSQL Review&lt;br&gt;tags: Database, NoSQL, Curriculum Review&lt;br&gt;category: Database&lt;/p&gt;
-&lt;h1 id=&quot;description-Basic-concept-of-NoSQL-and-
+      Basic concept of NoSQL and 4 types of NoSQL Databases
     
     </summary>
     
+      <category term="Database" scheme="http://zhaot777.github.io/categories/Database/"/>
+    
+    
+      <category term="Database, NoSQL, Curriculum Review" scheme="http://zhaot777.github.io/tags/Database-NoSQL-Curriculum-Review/"/>
     
   </entry>
   
   <entry>
-    <title></title>
+    <title>Database Performance-Tuning Review</title>
     <link href="http://zhaot777.github.io/2016/06/19/DB_PerformanceTuning/"/>
     <id>http://zhaot777.github.io/2016/06/19/DB_PerformanceTuning/</id>
     <published>2016-06-19T23:37:11.870Z</published>
-    <updated>2016-06-19T23:49:50.988Z</updated>
+    <updated>2016-06-19T23:53:22.510Z</updated>
     
-    <content type="html">&lt;p&gt;title: Database Performance-Tuning Review&lt;br&gt;tags: Database, Curriculum Review&lt;br&gt;category: Database&lt;/p&gt;
-&lt;h1 id=&quot;description-Performance-Tuning-concepts-how-DBMS-processes-SQL-queries-and-different-way-to-tuning-performance&quot;&gt;&lt;a href=&quot;#description-Performance-Tuning-concepts-how-DBMS-processes-SQL-queries-and-different-way-to-tuning-performance&quot; class=&quot;headerlink&quot; title=&quot;description: Performance-Tuning concepts, how DBMS processes SQL queries, and different way to tuning performance.&quot;&gt;&lt;/a&gt;description: Performance-Tuning concepts, how DBMS processes SQL queries, and different way to tuning performance.&lt;/h1&gt;&lt;h3 id=&quot;Performance-Tuning-concepts&quot;&gt;&lt;a href=&quot;#Performance-Tuning-concepts&quot; class=&quot;headerlink&quot; title=&quot;Performance-Tuning concepts&quot;&gt;&lt;/a&gt;Performance-Tuning concepts&lt;/h3&gt;&lt;ol&gt;
+    <content type="html">&lt;h3 id=&quot;Performance-Tuning-concepts&quot;&gt;&lt;a href=&quot;#Performance-Tuning-concepts&quot; class=&quot;headerlink&quot; title=&quot;Performance-Tuning concepts&quot;&gt;&lt;/a&gt;Performance-Tuning concepts&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Set of activities and procedures that reduce response time of database system- Fine -tuning the performance of a system requires that all factors must operate at optimum level with minimal bottlenecks&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -260,23 +263,25 @@
     
     <summary type="html">
     
-      &lt;p&gt;title: Database Performance-Tuning Review&lt;br&gt;tags: Database, Curriculum Review&lt;br&gt;category: Database&lt;/p&gt;
-&lt;h1 id=&quot;description-Performance-
+      Performance-Tuning concepts, how DBMS processes SQL queries, and different way to tuning performance.
     
     </summary>
     
+      <category term="Database" scheme="http://zhaot777.github.io/categories/Database/"/>
+    
+    
+      <category term="Database, Curriculum Review" scheme="http://zhaot777.github.io/tags/Database-Curriculum-Review/"/>
     
   </entry>
   
   <entry>
-    <title></title>
+    <title>Database Transaction Review</title>
     <link href="http://zhaot777.github.io/2016/06/19/DB_Transaction/"/>
     <id>http://zhaot777.github.io/2016/06/19/DB_Transaction/</id>
     <published>2016-06-19T23:37:11.868Z</published>
-    <updated>2016-06-19T23:51:38.351Z</updated>
+    <updated>2016-06-19T23:53:21.595Z</updated>
     
-    <content type="html">&lt;p&gt;title: Database Transaction Review&lt;br&gt;tags: Database, Curriculum Review&lt;br&gt;category: Database&lt;/p&gt;
-&lt;h1 id=&quot;description-Transactions-and-different-Concurrency-control-approach&quot;&gt;&lt;a href=&quot;#description-Transactions-and-different-Concurrency-control-approach&quot; class=&quot;headerlink&quot; title=&quot;description: Transactions, and different Concurrency control approach.&quot;&gt;&lt;/a&gt;description: Transactions, and different Concurrency control approach.&lt;/h1&gt;&lt;h3 id=&quot;Database-Transactions&quot;&gt;&lt;a href=&quot;#Database-Transactions&quot; class=&quot;headerlink&quot; title=&quot;Database Transactions&quot;&gt;&lt;/a&gt;Database Transactions&lt;/h3&gt;&lt;ol&gt;
+    <content type="html">&lt;h3 id=&quot;Database-Transactions&quot;&gt;&lt;a href=&quot;#Database-Transactions&quot; class=&quot;headerlink&quot; title=&quot;Database Transactions&quot;&gt;&lt;/a&gt;Database Transactions&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Logical unit of work that must be entirely completed or aborted&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -350,23 +355,25 @@
     
     <summary type="html">
     
-      &lt;p&gt;title: Database Transaction Review&lt;br&gt;tags: Database, Curriculum Review&lt;br&gt;category: Database&lt;/p&gt;
-&lt;h1 id=&quot;description-Transactions-and-di
+      Transactions, and different Concurrency control approach.
     
     </summary>
     
+      <category term="Database" scheme="http://zhaot777.github.io/categories/Database/"/>
+    
+    
+      <category term="Database, Curriculum Review" scheme="http://zhaot777.github.io/tags/Database-Curriculum-Review/"/>
     
   </entry>
   
   <entry>
-    <title></title>
+    <title>DB Normalization Review</title>
     <link href="http://zhaot777.github.io/2016/06/19/DB_Normalization/"/>
     <id>http://zhaot777.github.io/2016/06/19/DB_Normalization/</id>
     <published>2016-06-19T23:37:11.865Z</published>
-    <updated>2016-06-19T23:45:19.617Z</updated>
+    <updated>2016-06-19T23:53:43.233Z</updated>
     
-    <content type="html">&lt;p&gt;title: DB Normalization Review&lt;br&gt;tags: Database, Curriculum Review&lt;br&gt;category: Database&lt;/p&gt;
-&lt;h1 id=&quot;description-Basic-concept-of-Database-Normalization-normal-forms-and-how-to-implement-each-forms&quot;&gt;&lt;a href=&quot;#description-Basic-concept-of-Database-Normalization-normal-forms-and-how-to-implement-each-forms&quot; class=&quot;headerlink&quot; title=&quot;description: Basic concept of Database Normalization, normal forms and how to implement each forms.&quot;&gt;&lt;/a&gt;description: Basic concept of Database Normalization, normal forms and how to implement each forms.&lt;/h1&gt;&lt;h3 id=&quot;What-is-normalization-and-what-role-it-plays-in-the-DB-design-process&quot;&gt;&lt;a href=&quot;#What-is-normalization-and-what-role-it-plays-in-the-DB-design-process&quot; class=&quot;headerlink&quot; title=&quot;What is normalization and what role it plays in the DB design process&quot;&gt;&lt;/a&gt;What is normalization and what role it plays in the DB design process&lt;/h3&gt;&lt;ol&gt;
+    <content type="html">&lt;h3 id=&quot;What-is-normalization-and-what-role-it-plays-in-the-DB-design-process&quot;&gt;&lt;a href=&quot;#What-is-normalization-and-what-role-it-plays-in-the-DB-design-process&quot; class=&quot;headerlink&quot; title=&quot;What is normalization and what role it plays in the DB design process&quot;&gt;&lt;/a&gt;What is normalization and what role it plays in the DB design process&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Evaluating and correcting table structures to minimize data redundancies&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -423,11 +430,14 @@
     
     <summary type="html">
     
-      &lt;p&gt;title: DB Normalization Review&lt;br&gt;tags: Database, Curriculum Review&lt;br&gt;category: Database&lt;/p&gt;
-&lt;h1 id=&quot;description-Basic-concept-of-Databa
+      Basic concept of Database Normalization, normal forms and how to implement each forms.
     
     </summary>
     
+      <category term="Database" scheme="http://zhaot777.github.io/categories/Database/"/>
+    
+    
+      <category term="Database, Curriculum Review" scheme="http://zhaot777.github.io/tags/Database-Curriculum-Review/"/>
     
   </entry>
   
