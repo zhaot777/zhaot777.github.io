@@ -371,7 +371,7 @@
     <link href="http://zhaot777.github.io/2016/06/19/DB_Normalization/"/>
     <id>http://zhaot777.github.io/2016/06/19/DB_Normalization/</id>
     <published>2016-06-19T23:37:11.865Z</published>
-    <updated>2016-06-19T23:53:43.233Z</updated>
+    <updated>2016-06-19T23:57:15.025Z</updated>
     
     <content type="html">&lt;h3 id=&quot;What-is-normalization-and-what-role-it-plays-in-the-DB-design-process&quot;&gt;&lt;a href=&quot;#What-is-normalization-and-what-role-it-plays-in-the-DB-design-process&quot; class=&quot;headerlink&quot; title=&quot;What is normalization and what role it plays in the DB design process&quot;&gt;&lt;/a&gt;What is normalization and what role it plays in the DB design process&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Evaluating and correcting table structures to minimize data redundancies&lt;/li&gt;
@@ -437,7 +437,9 @@
       <category term="Database" scheme="http://zhaot777.github.io/categories/Database/"/>
     
     
-      <category term="Database, Curriculum Review" scheme="http://zhaot777.github.io/tags/Database-Curriculum-Review/"/>
+      <category term="Database" scheme="http://zhaot777.github.io/tags/Database/"/>
+    
+      <category term="Curriculum Review" scheme="http://zhaot777.github.io/tags/Curriculum-Review/"/>
     
   </entry>
   
