@@ -73,7 +73,7 @@
 <meta property="og:image" content="https://farm8.staticflickr.com/7728/27008966701_abf3d06926_b.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7195/27008966741_f2cc810af9_b.jpg">
 <meta property="og:image" content="https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg">
-<meta property="og:updated_time" content="2016-05-17T18:50:05.318Z">
+<meta property="og:updated_time" content="2016-05-22T04:44:29.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Memory Management Review">
 <meta name="twitter:description" content="This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.">
@@ -328,121 +328,79 @@
 <li>Provide efficient management of available storage</li>
 <li>Use a virtual address to address any memory location in the 32-bit address space</li>
 <li>Only headware use physical address(include processor) and OS manages the physical address space</li>
-<li><p>Memory Management Unit (MMU), is used for indirect address translation. It translated virtual address into physical address.</p>
-<p>  <img src="https://farm8.staticflickr.com/7534/26980709472_21687456f0_b.jpg" width="400" height="200" alt="MMU"></p>
-</li>
+<li>Memory Management Unit (MMU), is used for indirect address translation. It translated virtual address into physical address.<br>  <img src="https://farm8.staticflickr.com/7534/26980709472_21687456f0_b.jpg" width="400" height="200" alt="MMU"></li>
 </ul>
 <h3 id="Memory-Management-in-the-Early-Days"><a href="#Memory-Management-in-the-Early-Days" class="headerlink" title="Memory Management in the Early Days"></a>Memory Management in the Early Days</h3><ul>
 <li><p>Memory Fence</p>
 <ul>
-<li><p>If a user program tries to access OS area (address bigger than fence address) MMU will generate a trap</p>
-</li>
-<li><p>use overlays and resident to deal with user program won’t fit in memory</p>
-</li>
+<li>If a user program tries to access OS area (address bigger than fence address) MMU will generate a trap    </li>
+<li>use overlays and resident to deal with user program won’t fit in memory</li>
 </ul>
 </li>
 <li><p>Base and Bounds Registers</p>
 <ul>
-<li><p>Bounds register: Address space size of the user process</p>
-</li>
-<li><p>Base register: Start of physical memory for the user process</p>
-</li>
-<li><p>Segmentation:</p>
-<ul>
-<li><p>One pair of base and bounds registers per segment.</p>
-</li>
-<li><p>code, data, heap, stack and may be more (Memory Mapped file).</p>
-</li>
-<li><p>Use one bit to have access control (read-only, read/write).</p>
-</li>
-<li><p>If two prcesses read same memory, they can share segments.</p>
-</li>
-<li><p>Segmentation fault: virtual address not within range of any base-bounds registers or not valid.</p>
-</li>
-<li><p>Copy-On-Write: a process gets private copy of the page after a thread in the process performs a write for the first time (private/share bit need not be inside MMU).</p>
-</li>
-<li><p>Use a validity bit for each segment to find whether this segment is in memory or being swapped out before.</p>
-</li>
+<li>Bounds register: Address space size of the user process</li>
+<li>Base register: Start of physical memory for the user process</li>
+<li>Segmentation:<ul>
+<li>One pair of base and bounds registers per segment.</li>
+<li>code, data, heap, stack and may be more (Memory Mapped file).</li>
+<li>Use one bit to have access control (read-only, read/write).</li>
+<li>If two prcesses read same memory, they can share segments.</li>
+<li>Segmentation fault: virtual address not within range of any base-bounds registers or not valid.</li>
+<li>Copy-On-Write: a process gets private copy of the page after a thread in the process performs a write for the first time (private/share bit need not be inside MMU).</li>
+<li>Use a validity bit for each segment to find whether this segment is in memory or being swapped out before.</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="Hardware-Support-for-Virtual-Memory"><a href="#Hardware-Support-for-Virtual-Memory" class="headerlink" title="Hardware Support for Virtual Memory"></a>Hardware Support for Virtual Memory</h2><ul>
-<li><p>Segmentation divide the address space into variable-size segments and it has external fragmentation problem and “first-fit” is slow.</p>
-</li>
-<li><p>Paging divede the address space into fixed-size pages and can have internal fragmentation problem.</p>
-</li>
-<li><p>Paging:</p>
-<ul>
-<li><p>Address space is divided into pages, indexed by virtual page number.</p>
-</li>
-<li><p>Basic (Two-level) Page table indexed by virtual page number, start with a physical address (this is stored in the CR3 register for X86), has validity, modified, reference and protect bit, and physical page number.</p>
-</li>
-<li><p>A page table is associated with each process (OS has its page table as well).</p>
-</li>
+<li>Segmentation divide the address space into variable-size segments and it has external fragmentation problem and “first-fit” is slow.</li>
+<li>Paging divede the address space into fixed-size pages and can have internal fragmentation problem.</li>
+<li>Paging:<ul>
+<li>Address space is divided into pages, indexed by virtual page number.</li>
+<li>Basic (Two-level) Page table indexed by virtual page number, start with a physical address (this is stored in the CR3 register for X86), has validity, modified, reference and protect bit, and physical page number.</li>
+<li>A page table is associated with each process (OS has its page table as well).</li>
 </ul>
 </li>
 </ul>
 <h3 id="Forward-Mapped-Multi-level-Page-Tables"><a href="#Forward-Mapped-Multi-level-Page-Tables" class="headerlink" title="Forward-Mapped (Multi-level) Page Tables"></a>Forward-Mapped (Multi-level) Page Tables</h3><p><img src="https://farm8.staticflickr.com/7400/27076290915_04e7cb14b9_b.jpg" width="400" height="220" alt="FM page table"></p>
 <ul>
-<li><p>Use 10 bits for page dir table and 10 bits for page table and the last 12 bits use for offset.</p>
-</li>
-<li><p>Can save page table size, the minimum size is 12KB (one page dir two page tables)</p>
-</li>
-<li><p>The drawback is it has two physical memory accesses to map a virtual address to a physical address</p>
-</li>
+<li>Use 10 bits for page dir table and 10 bits for page table and the last 12 bits use for offset.</li>
+<li>Can save page table size, the minimum size is 12KB (one page dir two page tables)</li>
+<li>The drawback is it has two physical memory accesses to map a virtual address to a physical address</li>
 </ul>
 <h3 id="Linear-Page-Tables"><a href="#Linear-Page-Tables" class="headerlink" title="Linear Page Tables"></a>Linear Page Tables</h3><ul>
-<li><p>Use 2 bit as Space, 00 and 01 page table are start with virtual address space and conbine the 00 or 01 bits, in 10 space page table started with physical address we can find page table entry.</p>
-</li>
-<li><p>Can reduce size requirements with partial page tables, and it can use length register to constranins size of each space. But it not work well for multiple processes.</p>
-</li>
+<li>Use 2 bit as Space, 00 and 01 page table are start with virtual address space and conbine the 00 or 01 bits, in 10 space page table started with physical address we can find page table entry.</li>
+<li>Can reduce size requirements with partial page tables, and it can use length register to constranins size of each space. But it not work well for multiple processes.</li>
 </ul>
 <h3 id="Hashed-Page-Tables"><a href="#Hashed-Page-Tables" class="headerlink" title="Hashed Page Tables"></a>Hashed Page Tables</h3><ul>
-<li><p>Hashed page tables</p>
-<ul>
-<li><p>Use 2 bits for hashing</p>
-</li>
-<li><p>Works well for sparcely allocated address space</p>
-</li>
-<li><p>Each page table entry have a tag and link</p>
-</li>
+<li>Hashed page tables<ul>
+<li>Use 2 bits for hashing</li>
+<li>Works well for sparcely allocated address space</li>
+<li>Each page table entry have a tag and link</li>
 </ul>
 </li>
-<li><p>Clustered page tables</p>
-<ul>
+<li>Clustered page tables<ul>
 <li>Many page table entries have one tag and link</li>
 </ul>
 </li>
-<li><p>Inverted page tables</p>
-<ul>
-<li><p>Page table is indexed by physical page number</p>
-</li>
-<li><p>Conbine virtual page number and PID to get hash</p>
-</li>
-<li><p>Each entry contains PID, page number and physical page number</p>
-</li>
+<li>Inverted page tables<ul>
+<li>Page table is indexed by physical page number</li>
+<li>Conbine virtual page number and PID to get hash</li>
+<li>Each entry contains PID, page number and physical page number</li>
 </ul>
 </li>
 </ul>
 <h3 id="Translation-Lookaside-Buffers-TLB"><a href="#Translation-Lookaside-Buffers-TLB" class="headerlink" title="Translation Lookaside Buffers (TLB)"></a>Translation Lookaside Buffers (TLB)</h3><ul>
-<li><p>Cashe page table entries, caches the mapping from virtual page nmber to physical page number.</p>
-</li>
-<li><p>TLB miss will cost O(1) memory accesses.</p>
-</li>
-<li><p>When a page table entry is modified, the OS must flush (invalidate) the corresponding TLB entry. When switching to a different process, must flush the entire TLB.</p>
-</li>
-<li><p>In a multiprocessors environment, one processor can modify a mapping cached in the TLB of another processor by shoot-down (invalidate) the another processor.</p>
-</li>
-<li><p>Two-way set-associative cache with 64 lines:</p>
-<ul>
-<li><p>Use 6 bits as key to have 64 lines.</p>
-</li>
-<li><p>In same the line, tag in the virtual address is used to compared against all other tags in same line simutaneously.</p>
-</li>
-<li><p>For other TLB, it can be fully associative cache or one-way set- associative cache.</p>
-</li>
+<li>Cashe page table entries, caches the mapping from virtual page nmber to physical page number.</li>
+<li>TLB miss will cost O(1) memory accesses.</li>
+<li>When a page table entry is modified, the OS must flush (invalidate) the corresponding TLB entry. When switching to a different process, must flush the entire TLB.</li>
+<li>In a multiprocessors environment, one processor can modify a mapping cached in the TLB of another processor by shoot-down (invalidate) the another processor.</li>
+<li>Two-way set-associative cache with 64 lines:    <ul>
+<li>Use 6 bits as key to have 64 lines.</li>
+<li>In same the line, tag in the virtual address is used to compared against all other tags in same line simutaneously.</li>
+<li>For other TLB, it can be fully associative cache or one-way set- associative cache.</li>
 </ul>
 </li>
 </ul>
@@ -458,36 +416,25 @@
 </li>
 </ul>
 <h2 id="Operating-System-Issues"><a href="#Operating-System-Issues" class="headerlink" title="Operating System Issues"></a>Operating System Issues</h2><h3 id="General-Concerns"><a href="#General-Concerns" class="headerlink" title="General Concerns"></a>General Concerns</h3><ul>
-<li><p>Prefetching</p>
-<ul>
-<li><p>Fetching a page as well as the sequential pages.</p>
-</li>
-<li><p>Access to pages is often sequential.</p>
-</li>
+<li>Prefetching    <ul>
+<li>Fetching a page as well as the sequential pages.</li>
+<li>Access to pages is often sequential.</li>
 </ul>
 </li>
-<li><p>Pageout Daemon</p>
-<ul>
-<li><p>Reference bit in page table entry is used for approximate LRU.</p>
-</li>
-<li><p>Clock algorthm, need to give enough time for thousands of references before checking</p>
-<p><img src="https://farm8.staticflickr.com/7366/26982432522_b89cb1fe31_b.jpg" width="420" height="280" alt="Clock algorthm"></p>
-</li>
+<li>Pageout Daemon<ul>
+<li>Reference bit in page table entry is used for approximate LRU.</li>
+<li>Clock algorthm, need to give enough time for thousands of references before checking<br><img src="https://farm8.staticflickr.com/7366/26982432522_b89cb1fe31_b.jpg" width="420" height="280" alt="Clock algorthm"></li>
 </ul>
 </li>
-<li><p>Thrashing problem</p>
-<ul>
-<li><p>Global allocation: All processes compete for page frames from a single pool.</p>
-</li>
-<li><p>Local allocation: Each process has its own private pool of page frames. Using Local Allocation is a way to reduce the chance of thrashing.</p>
-</li>
-<li><p>For thrashing problem, use Working-Set Principle, if the sum of the working-set of all processes is less than the total amount of available physical memory then thrashing cannot occur.</p>
-</li>
+<li>Thrashing problem<ul>
+<li>Global allocation: All processes compete for page frames from a single pool.</li>
+<li>Local allocation: Each process has its own private pool of page frames. Using Local Allocation is a way to reduce the chance of thrashing.</li>
+<li>For thrashing problem, use Working-Set Principle, if the sum of the working-set of all processes is less than the total amount of available physical memory then thrashing cannot occur.</li>
 </ul>
 </li>
 </ul>
 <h3 id="Representative-Systems"><a href="#Representative-Systems" class="headerlink" title="Representative Systems"></a>Representative Systems</h3><ul>
-<li><p>Address-Space Simplified Representation:</p>
+<li><p>Address-Space Simplified Representation:    </p>
 <p>  <img src="https://farm8.staticflickr.com/7728/27008966701_abf3d06926_b.jpg" width="420" height="250" alt="AS simple pres"></p>
 </li>
 <li><p>Address-Space Real Representation:</p>
@@ -497,10 +444,8 @@
 <h3 id="Copy-on-Write-and-Fork"><a href="#Copy-on-Write-and-Fork" class="headerlink" title="Copy on Write and Fork"></a>Copy on Write and Fork</h3><ul>
 <li><p>Shadow Objects:</p>
 <ul>
-<li><p>Keep track of pages that were originally copy-on-write but have benn modified.</p>
-</li>
-<li><p>A page in a memory map, into which an object was mapped private, have an associated shadow object.</p>
-</li>
+<li>Keep track of pages that were originally copy-on-write but have benn modified.</li>
+<li>A page in a memory map, into which an object was mapped private, have an associated shadow object.</li>
 <li><p>Shadow object tells you where to copy from when you need to perform copy-on-write.</p>
 <p>  <img src="https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg" width="420" height="250" alt="Clock algorthm"></p>
 </li>
@@ -508,14 +453,10 @@
 </li>
 </ul>
 <h3 id="Backing-Store-Issues"><a href="#Backing-Store-Issues" class="headerlink" title="Backing Store Issues"></a>Backing Store Issues</h3><ul>
-<li><p>Shadow objects and anonymous memory must be backed up in swap space.</p>
-</li>
-<li><p>Swap Space management approach:</p>
-<ul>
-<li><p>randical-conservative approach: eager evaluation, backing-store space is allocated when virtual memory is allocated.</p>
-</li>
-<li><p>radical-liberal approach: lazy evaluation, backing-store space is allocated only when needed.</p>
-</li>
+<li>Shadow objects and anonymous memory must be backed up in swap space.</li>
+<li>Swap Space management approach:    <ul>
+<li>randical-conservative approach: eager evaluation, backing-store space is allocated when virtual memory is allocated.</li>
+<li>radical-liberal approach: lazy evaluation, backing-store space is allocated only when needed.</li>
 </ul>
 </li>
 </ul>
@@ -550,6 +491,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/19/DB_Normalization/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -628,7 +573,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

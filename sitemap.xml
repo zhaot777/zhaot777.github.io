@@ -2,9 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhaot777.github.io/2016/06/19/DB_Transaction/</loc>
+    
+    <lastmod>2016-06-19T23:51:38.351Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhaot777.github.io/2016/06/19/DB_PerformanceTuning/</loc>
+    
+    <lastmod>2016-06-19T23:49:50.988Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhaot777.github.io/2016/06/19/DB_NoSQL/</loc>
+    
+    <lastmod>2016-06-19T23:46:24.371Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhaot777.github.io/2016/06/19/DB_Normalization/</loc>
+    
+    <lastmod>2016-06-19T23:45:19.617Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhaot777.github.io/2016/06/19/DB_BigData/</loc>
+    
+    <lastmod>2016-06-19T23:44:55.935Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhaot777.github.io/2016/05/15/memoryreview/</loc>
     
-    <lastmod>2016-05-17T18:50:05.318Z</lastmod>
+    <lastmod>2016-05-22T04:44:29.011Z</lastmod>
     
   </url>
   

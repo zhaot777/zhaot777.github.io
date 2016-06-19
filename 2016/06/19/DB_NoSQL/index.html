@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="OS," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -59,25 +59,25 @@
 
 
 
-<meta name="description" content="This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.">
+<meta name="description" content="title: NoSQL Reviewtags: Database, NoSQL, Curriculum Reviewcategory: Database
+description: Basic concept of NoSQL and 4 types of NoSQL DatabasesWhat is NoSQL
+Need for NoSQL
+Lots of new and new types o">
 <meta property="og:type" content="article">
-<meta property="og:title" content="File Systems Review">
-<meta property="og:url" content="http://zhaot777.github.io/2016/05/12/filesystemsreview/index.html">
+<meta property="og:title" content="Steven's Blog">
+<meta property="og:url" content="http://zhaot777.github.io/2016/06/19/DB_NoSQL/index.html">
 <meta property="og:site_name" content="Steven's Blog">
-<meta property="og:description" content="This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.">
-<meta property="og:image" content="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg">
-<meta property="og:image" content="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg">
-<meta property="og:image" content="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg">
-<meta property="og:image" content="https://farm8.staticflickr.com/7040/26388472283_d457c0580f_b.jpg">
-<meta property="og:image" content="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png">
-<meta property="og:image" content="https://farm8.staticflickr.com/7251/26387400194_a85f1f718a_b.jpg">
-<meta property="og:image" content="https://farm8.staticflickr.com/7589/26387505004_aabd34527c_b.jpg">
-<meta property="og:image" content="https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg">
-<meta property="og:updated_time" content="2016-05-13T19:05:58.235Z">
+<meta property="og:description" content="title: NoSQL Reviewtags: Database, NoSQL, Curriculum Reviewcategory: Database
+description: Basic concept of NoSQL and 4 types of NoSQL DatabasesWhat is NoSQL
+Need for NoSQL
+Lots of new and new types o">
+<meta property="og:updated_time" content="2016-06-19T23:46:24.371Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="File Systems Review">
-<meta name="twitter:description" content="This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.">
-<meta name="twitter:image" content="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg">
+<meta name="twitter:title" content="Steven's Blog">
+<meta name="twitter:description" content="title: NoSQL Reviewtags: Database, NoSQL, Curriculum Reviewcategory: Database
+description: Basic concept of NoSQL and 4 types of NoSQL DatabasesWhat is NoSQL
+Need for NoSQL
+Lots of new and new types o">
 
 
 
@@ -95,7 +95,7 @@
   };
 </script>
 
-  <title> File Systems Review | Steven's Blog </title>
+  <title>  | Steven's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -257,7 +257,7 @@
             
             
               
-                File Systems Review
+                
               
             
           </h1>
@@ -269,38 +269,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-12T23:01:40-07:00" content="2016-05-12">
-              2016-05-12
+            <time itemprop="dateCreated" datetime="2016-06-19T16:37:11-07:00" content="2016-06-19">
+              2016-06-19
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Operating-Systems/" itemprop="url" rel="index">
-                    <span itemprop="name">Operating Systems</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/12/filesystemsreview/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/12/filesystemsreview/" itemprop="commentsCount"></span>
+                <a href="/2016/06/19/DB_NoSQL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/19/DB_NoSQL/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -322,148 +303,70 @@
       
 
       
-        <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>The requirements of file systems:</p>
-<ul>
-<li>Permanent storage</li>
-<li>Quick, easy and efficient</li>
-</ul>
-<h3 id="The-Basics-of-File-Systems"><a href="#The-Basics-of-File-Systems" class="headerlink" title="The Basics of File Systems"></a>The Basics of File Systems</h3><h4 id="Disk-Architecture"><a href="#Disk-Architecture" class="headerlink" title="Disk Architecture"></a>Disk Architecture</h4><p><img src="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg" width="400" height="280" alt="disk_architecture"></p>
-<ul>
-<li>Have multiple platters and each one have top and bottom heads.</li>
-<li>The smallest addressable unit is a sector. Each platter contains many tracks and each track contains many sectors. The same vertical’s tracks is one cylinder.</li>
-<li>disk address = (head/surface#, cylinder/track#, sector#)</li>
-</ul>
-<h4 id="S5FS"><a href="#S5FS" class="headerlink" title="S5FS"></a>S5FS</h4><p>Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression</p>
-<ol>
-<li><p>layout</p>
-<p> <img src="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg" width="170" height="250" alt="S5FS"></p>
-<ul>
-<li>The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.</li>
-</ul>
-</li>
-<li><p>Superblock</p>
-<ul>
-<li>Contains the head of the free list:<br>  Can address up to 100 free disk blocks, and the last pointer point to additional free disk blocks, etc.</li>
-<li>Maintain a free inode list (inode cache):<br>  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.</li>
-</ul>
-</li>
-<li><p>I-list</p>
-<ul>
-<li>For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map</li>
-</ul>
-</li>
-<li><p>Disk map</p>
-<p> <img src="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg" width="450" height="320" alt="Disk map"></p>
-<p> 0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.</p>
-</li>
-</ol>
-<h4 id="Improvement-of-S5FS"><a href="#Improvement-of-S5FS" class="headerlink" title="Improvement of S5FS"></a>Improvement of S5FS</h4><p>Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)</p>
-<ul>
-<li>Increase block size</li>
-<li>Minimizing seek time<ul>
-<li>Use cylinder groups to put related data in the same cylinde group</li>
-</ul>
-</li>
-<li>Minimizing Latency<ul>
-<li>Block interleaving</li>
-</ul>
-</li>
-<li><p>Log-Structured File System (LFS)</p>
-<p>  <img src="https://farm8.staticflickr.com/7040/26388472283_d457c0580f_b.jpg" width="400" height="100" alt="LFS"></p>
-<ul>
-<li>Main principles: nerver delete, append only.</li>
-<li>Inode Map: keep the updated inode, and each inode map piece is appended to log. </li>
-<li>Use checkpoint file (can have previous and current version) which is not belong to log to keeps track of all inode map pieces.</li>
-</ul>
-</li>
-</ul>
-<h3 id="Multiple-Disks"><a href="#Multiple-Disks" class="headerlink" title="Multiple Disks"></a>Multiple Disks</h3><h4 id="Benefits-of-Multiple-Disks"><a href="#Benefits-of-Multiple-Disks" class="headerlink" title="Benefits of Multiple Disks"></a>Benefits of Multiple Disks</h4><ul>
-<li>Hold more data</li>
-<li>Can be stored redundantly, increase reliability and availability</li>
-<li>Can spread data, allowing parallel access, increase effective access time</li>
-</ul>
-<h4 id="Logical-Volume-Manager-LVM"><a href="#Logical-Volume-Manager-LVM" class="headerlink" title="Logical Volume Manager (LVM)"></a>Logical Volume Manager (LVM)</h4><p><img src="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png" width="350" height="150" alt="LVM"></p>
-<p>Manage multiple disks and try not change existing file systems much.</p>
-<ul>
-<li>Spanning: Multiple disks appear to file system as one large disk</li>
-<li>Mirroring: Write redundantly to multiple disks. Read from one.</li>
-</ul>
-<h4 id="Striping"><a href="#Striping" class="headerlink" title="Striping"></a>Striping</h4><p>One disk keep one striping unit data and then the next disk keep next one string unit data and keep doing this.</p>
-<ul>
-<li>Advantages: Increase parallelism.</li>
-<li>Disadvantages: Worse reliability, higher variance and heterogenious disks will reduce the saving access time.</li>
-<li>In general, performance is better with larger striping unit, which can reduce seek time</li>
-<li>Probability of N-disk system failing is: 1-(1-fail)^N</li>
-</ul>
-<h4 id="Redundant-Array-of-Inexpensive-Disks-RAID"><a href="#Redundant-Array-of-Inexpensive-Disks-RAID" class="headerlink" title="Redundant Array of Inexpensive Disks (RAID)"></a>Redundant Array of Inexpensive Disks (RAID)</h4><ul>
-<li>level 1: Just mirroring.</li>
-<li>level 2: Similar to memory’s ECC, use serveal disks to check bits.</li>
-<li>level 3: Use one disk to maintain parity bits.</li>
-<li>level 4: Use one disk to maintain parity blocks.</li>
-<li>level 5: Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.</li>
-</ul>
-<h3 id="Flash-Memory"><a href="#Flash-Memory" class="headerlink" title="Flash Memory"></a>Flash Memory</h3><ol>
-<li>Technologies of Flash<ul>
-<li>NOR: Byte addressable.</li>
-<li>NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.</li>
-</ul>
-</li>
-<li>Wear leveling<ul>
-<li>Writing problem: To change zeroes to ones, must erase entire block.</li>
-<li>Spread writes/erasures across entire drive.</li>
-<li>Using flash traslation layer(FTL) and log-structured file system.</li>
+        <p>title: NoSQL Review<br>tags: Database, NoSQL, Curriculum Review<br>category: Database</p>
+<h1 id="description-Basic-concept-of-NoSQL-and-4-types-of-NoSQL-Databases"><a href="#description-Basic-concept-of-NoSQL-and-4-types-of-NoSQL-Databases" class="headerlink" title="description: Basic concept of NoSQL and 4 types of NoSQL Databases"></a>description: Basic concept of NoSQL and 4 types of NoSQL Databases</h1><h3 id="What-is-NoSQL"><a href="#What-is-NoSQL" class="headerlink" title="What is NoSQL"></a>What is NoSQL</h3><ol>
+<li>Need for NoSQL<ul>
+<li>Lots of new and new types of data</li>
+<li>Hard to use a relational model</li>
+<li>Hard to scale up to fit more data, more users</li>
+<li>Hard to keep up performance</li>
 </ul>
 </li>
 </ol>
-<h3 id="Crash-Resiliency"><a href="#Crash-Resiliency" class="headerlink" title="Crash Resiliency"></a>Crash Resiliency</h3><h4 id="Crash-problem"><a href="#Crash-problem" class="headerlink" title="Crash problem"></a>Crash problem</h4><ul>
-<li>Disk update, gather all dirty blocks, which is done one disk block at a time.</li>
-<li>In S5fs and FFS, the lower level file system can sequence disk writes in any order.</li>
-</ul>
-<h4 id="Dealing-with-Crashes"><a href="#Dealing-with-Crashes" class="headerlink" title="Dealing with Crashes"></a>Dealing with Crashes</h4><ol>
-<li><p>Soft Updates</p>
 <ul>
-<li>Consistency-preserving approach: order disk operations to preserve meta-data consistency.</li>
-<li>Have problems. In reality, in order to save the numver of disk writes, multiple objects can be packed into a diks block and will make a cycle in the topological order, and breaking circular dependency will slow the preformance.</li>
+<li>Feature: flexible, schema-less, efficient &amp; fast, available, scalable</li>
+<li>JSON: a set of key-value pairs</li>
+<li>‘BASE’ property<ul>
+<li>Best effort</li>
+<li>Approximate answer</li>
+<li>Simpler</li>
+<li>Easier evolution</li>
 </ul>
 </li>
-<li><p>Journaling</p>
-<p> <img src="https://farm8.staticflickr.com/7251/26387400194_a85f1f718a_b.jpg" width="400" height="60" alt="journaling"></p>
-<ul>
-<li>Use transaction idea, a journal is append-only, and it is a separate part of the disk(can add to any file system).</li>
-<li>Append a commit record, when it’s time to update the file system, write to journal first, and write data to file system only after the commit record is writeen to the journal.</li>
-<li>Undo journaling(record previous contents), redo journaling(record new contents).</li>
-<li>Recovery will take the file system into a consistent state at a transaction boundary, and copying a disk block to the file system is idempotent.</li>
 </ul>
-</li>
-<li><p>Shadow paging</p>
-<ul>
-<li><p>Based on copy-on-write ideas</p>
-<p>  <img src="https://farm8.staticflickr.com/7589/26387505004_aabd34527c_b.jpg" width="400" height="240" alt="shadow_paging"></p>
-</li>
-</ul>
-</li>
+<h3 id="NoSQL-DBs"><a href="#NoSQL-DBs" class="headerlink" title="NoSQL DBs"></a>NoSQL DBs</h3><ol>
+<li>Types: Key-value store, Column-family store, Document store, Graph store</li>
 </ol>
-<h3 id="Naming-and-Directories"><a href="#Naming-and-Directories" class="headerlink" title="Naming and Directories"></a>Naming and Directories</h3><h4 id="Directories"><a href="#Directories" class="headerlink" title="Directories"></a>Directories</h4><ol>
-<li>S5FS Directories<ul>
-<li>Each entry is 32 bytes.</li>
+<ul>
+<li>Standard way to compare NoSQL DBs: Architecture, administration, deployment, development, performance &amp; scalability</li>
+<li>Polyglot persistence: use different storage technologies to store different parts of a single application and tied together by the application, using DB APIs or web services APIs.</li>
+<li>NoSQL benefit<ul>
+<li>Improve programmer productivity, better matches needs</li>
+<li>Improve data access performance, large volumes</li>
 </ul>
 </li>
-<li>FFS Directories:<ul>
-<li>No restrictions on names.</li>
-<li>Maintain the last entry to get the free space.</li>
-<li>Use Hash table or B+ tree to look for a file name.</li>
-<li>Use extensible Hashing, the low-order i bits of hi(x) are the same in hi+1(x)</li>
-<li>B+ tree, internal nodes contain no data, just keys, leaf node are linked to ease sorted sequential traversal</li>
+<li>Node &amp; Cluster: Node is a single NoSQL DB instance, Cluster is a collection of nodes which holds an entire DB.</li>
+<li>Key-value DBs<ul>
+<li>While DB is a dictionary</li>
+<li>Records don’t have to contain identical fields</li>
+<li>Key is comparable to a PK. Value is an aggregate of all the dependent columns.</li>
+<li>Querying occurs only on keys, and entire value is returned.</li>
+<li>Memcached: distributed memory object caching system, simple</li>
+<li>Redis: offers richer types such as list, set and dictionary for values, and AlSO offer a way to use hashing for storing keys</li>
+<li>Anazon’s Dynamo</li>
 </ul>
 </li>
-</ol>
-<h4 id="Name-Space-Management"><a href="#Name-Space-Management" class="headerlink" title="Name-Space Management"></a>Name-Space Management</h4><ul>
-<li>For Windows, it use drives to make the name-space appear uniform. For Unix, it use file system mounting.</li>
+<li>Column family DBs<ul>
+<li>BigTable, HBase, Cassandra, Amazon SimpleDB, Hypertable.</li>
+<li>Column family, Column, Super column family</li>
 </ul>
-<h3 id="File-systems-Summary"><a href="#File-systems-Summary" class="headerlink" title="File systems Summary"></a>File systems Summary</h3><p>This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.</p>
-<p><img src="https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg" width="450" height="280" alt="file_system_summary"></p>
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class="addthis_sharing_toolbox"></div>
+</li>
+<li>Document DBs<ul>
+<li>A more sophisticated version of a key-value store, whre the value is a collection of documents, can be JSON, XML, etc.</li>
+</ul>
+</li>
+<li>Graph DBs<ul>
+<li>Use nodes, relations, properties(k-v pairs) on vertices and edges to store data.</li>
+<li>index free </li>
+</ul>
+</li>
+<li>Triple store(Resource Description Framework)<ul>
+<li>subject, predicate, object</li>
+<li>class, attribute, value  </li>
+<li>Architecture mode: in-memory, native store, non-native store(use third-party service)</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -476,27 +379,21 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/OS/" rel="tag">#OS</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/18/todolist/" rel="next" title="To Do List">
-                <i class="fa fa-chevron-left"></i> To Do List
+              <a href="/2016/06/19/DB_PerformanceTuning/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/15/memoryreview/" rel="prev" title="Memory Management Review">
-                Memory Management Review <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/19/DB_BigData/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -682,7 +579,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Basics-of-File-Systems"><span class="nav-number">2.</span> <span class="nav-text">The Basics of File Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Disk-Architecture"><span class="nav-number">2.1.</span> <span class="nav-text">Disk Architecture</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#S5FS"><span class="nav-number">2.2.</span> <span class="nav-text">S5FS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Improvement-of-S5FS"><span class="nav-number">2.3.</span> <span class="nav-text">Improvement of S5FS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiple-Disks"><span class="nav-number">3.</span> <span class="nav-text">Multiple Disks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Benefits-of-Multiple-Disks"><span class="nav-number">3.1.</span> <span class="nav-text">Benefits of Multiple Disks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Logical-Volume-Manager-LVM"><span class="nav-number">3.2.</span> <span class="nav-text">Logical Volume Manager (LVM)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Striping"><span class="nav-number">3.3.</span> <span class="nav-text">Striping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Redundant-Array-of-Inexpensive-Disks-RAID"><span class="nav-number">3.4.</span> <span class="nav-text">Redundant Array of Inexpensive Disks (RAID)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flash-Memory"><span class="nav-number">4.</span> <span class="nav-text">Flash Memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Crash-Resiliency"><span class="nav-number">5.</span> <span class="nav-text">Crash Resiliency</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Crash-problem"><span class="nav-number">5.1.</span> <span class="nav-text">Crash problem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dealing-with-Crashes"><span class="nav-number">5.2.</span> <span class="nav-text">Dealing with Crashes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Naming-and-Directories"><span class="nav-number">6.</span> <span class="nav-text">Naming and Directories</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Directories"><span class="nav-number">6.1.</span> <span class="nav-text">Directories</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Name-Space-Management"><span class="nav-number">6.2.</span> <span class="nav-text">Name-Space Management</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-systems-Summary"><span class="nav-number">7.</span> <span class="nav-text">File systems Summary</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#description-Basic-concept-of-NoSQL-and-4-types-of-NoSQL-Databases"><span class="nav-number">1.</span> <span class="nav-text">description: Basic concept of NoSQL and 4 types of NoSQL Databases</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-NoSQL"><span class="nav-number">1.0.1.</span> <span class="nav-text">What is NoSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NoSQL-DBs"><span class="nav-number">1.0.2.</span> <span class="nav-text">NoSQL DBs</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -940,9 +837,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'zhaot777githubio';
-      var disqus_identifier = '2016/05/12/filesystemsreview/';
-      var disqus_title = 'File Systems Review';
-      var disqus_url = 'http://zhaot777.github.io/2016/05/12/filesystemsreview/';
+      var disqus_identifier = '2016/06/19/DB_NoSQL/';
+      var disqus_title = '';
+      var disqus_url = 'http://zhaot777.github.io/2016/06/19/DB_NoSQL/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
