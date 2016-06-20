@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhaot777.github.io/2016/06/19/DB_PerformanceTuning/</loc>
+    
+    <lastmod>2016-06-20T00:14:01.790Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhaot777.github.io/2016/06/19/DB_BigData/</loc>
     
     <lastmod>2016-06-20T00:11:49.432Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://zhaot777.github.io/2016/06/19/DB_NoSQL/</loc>
     
     <lastmod>2016-06-20T00:08:58.710Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhaot777.github.io/2016/06/19/DB_PerformanceTuning/</loc>
-    
-    <lastmod>2016-06-20T00:08:00.233Z</lastmod>
     
   </url>
   

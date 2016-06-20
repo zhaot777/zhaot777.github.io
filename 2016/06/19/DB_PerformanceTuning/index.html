@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://zhaot777.github.io/2016/06/19/DB_PerformanceTuning/index.html">
 <meta property="og:site_name" content="Steven's Blog">
 <meta property="og:description" content="Performance-Tuning concepts, how DBMS processes SQL queries, and different way to tuning performance.">
-<meta property="og:updated_time" content="2016-06-20T00:08:00.233Z">
+<meta property="og:updated_time" content="2016-06-20T00:14:01.790Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Database Performance-Tuning Review">
 <meta name="twitter:description" content="Performance-Tuning concepts, how DBMS processes SQL queries, and different way to tuning performance.">
@@ -327,9 +327,11 @@
 <li>Query Processing:<ul>
 <li>Parsing: Query Optimizer chooses the most efficient access plan</li>
 <li>Execution: Reuse the exists cache plan or execute the SQL using the chosen execution plan</li>
-<li>Fetching: DBMS fetches the data and sends the result set back to the client    <h3 id="Indexes"><a href="#Indexes" class="headerlink" title="Indexes"></a>Indexes</h3></li>
+<li>Fetching: DBMS fetches the data and sends the result set back to the client</li>
 </ul>
 </li>
+</ol>
+<h3 id="Indexes"><a href="#Indexes" class="headerlink" title="Indexes"></a>Indexes</h3><ol>
 <li>Help speed up data access</li>
 <li>Data sparsity: number of different values a cloumn could have. low sparsity make index might be useless</li>
 <li>Data structures used to implement indexed:<ul>
@@ -340,9 +342,11 @@
 </li>
 <li>Index Selectivity: Measure of the likelihood that an index will be used in query processing<ul>
 <li>Index cannot always be used to improve performance</li>
-<li>Function-based index<h3 id="Query-Optimizer"><a href="#Query-Optimizer" class="headerlink" title="Query Optimizer"></a>Query Optimizer</h3></li>
+<li>Function-based index</li>
 </ul>
 </li>
+</ol>
+<h3 id="Query-Optimizer"><a href="#Query-Optimizer" class="headerlink" title="Query Optimizer"></a>Query Optimizer</h3><ol>
 <li>Optimizer Choices<ul>
 <li>Rule-based optimizer </li>
 <li>Cost-based optimizer</li>

@@ -206,7 +206,7 @@
     <link href="http://zhaot777.github.io/2016/06/19/DB_PerformanceTuning/"/>
     <id>http://zhaot777.github.io/2016/06/19/DB_PerformanceTuning/</id>
     <published>2016-06-19T23:37:11.870Z</published>
-    <updated>2016-06-20T00:08:00.233Z</updated>
+    <updated>2016-06-20T00:14:01.790Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Performance-Tuning-concepts&quot;&gt;&lt;a href=&quot;#Performance-Tuning-concepts&quot; class=&quot;headerlink&quot; title=&quot;Performance-Tuning concepts&quot;&gt;&lt;/a&gt;Performance-Tuning concepts&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Set of activities and procedures that reduce response time of database system- Fine -tuning the performance of a system requires that all factors must operate at optimum level with minimal bottlenecks&lt;/li&gt;
@@ -222,9 +222,11 @@
 &lt;li&gt;Query Processing:&lt;ul&gt;
 &lt;li&gt;Parsing: Query Optimizer chooses the most efficient access plan&lt;/li&gt;
 &lt;li&gt;Execution: Reuse the exists cache plan or execute the SQL using the chosen execution plan&lt;/li&gt;
-&lt;li&gt;Fetching: DBMS fetches the data and sends the result set back to the client    &lt;h3 id=&quot;Indexes&quot;&gt;&lt;a href=&quot;#Indexes&quot; class=&quot;headerlink&quot; title=&quot;Indexes&quot;&gt;&lt;/a&gt;Indexes&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;Fetching: DBMS fetches the data and sends the result set back to the client&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Indexes&quot;&gt;&lt;a href=&quot;#Indexes&quot; class=&quot;headerlink&quot; title=&quot;Indexes&quot;&gt;&lt;/a&gt;Indexes&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Help speed up data access&lt;/li&gt;
 &lt;li&gt;Data sparsity: number of different values a cloumn could have. low sparsity make index might be useless&lt;/li&gt;
 &lt;li&gt;Data structures used to implement indexed:&lt;ul&gt;
@@ -235,9 +237,11 @@
 &lt;/li&gt;
 &lt;li&gt;Index Selectivity: Measure of the likelihood that an index will be used in query processing&lt;ul&gt;
 &lt;li&gt;Index cannot always be used to improve performance&lt;/li&gt;
-&lt;li&gt;Function-based index&lt;h3 id=&quot;Query-Optimizer&quot;&gt;&lt;a href=&quot;#Query-Optimizer&quot; class=&quot;headerlink&quot; title=&quot;Query Optimizer&quot;&gt;&lt;/a&gt;Query Optimizer&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;Function-based index&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Query-Optimizer&quot;&gt;&lt;a href=&quot;#Query-Optimizer&quot; class=&quot;headerlink&quot; title=&quot;Query Optimizer&quot;&gt;&lt;/a&gt;Query Optimizer&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Optimizer Choices&lt;ul&gt;
 &lt;li&gt;Rule-based optimizer &lt;/li&gt;
 &lt;li&gt;Cost-based optimizer&lt;/li&gt;
