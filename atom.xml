@@ -460,7 +460,7 @@
     <link href="http://zhaot777.github.io/2016/05/15/memoryreview/"/>
     <id>http://zhaot777.github.io/2016/05/15/memoryreview/</id>
     <published>2016-05-15T19:12:35.285Z</published>
-    <updated>2016-05-22T04:44:29.011Z</updated>
+    <updated>2016-06-20T00:00:42.347Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Virtual-Memory-Basic&quot;&gt;&lt;a href=&quot;#Virtual-Memory-Basic&quot; class=&quot;headerlink&quot; title=&quot;Virtual Memory Basic&quot;&gt;&lt;/a&gt;Virtual Memory Basic&lt;/h2&gt;&lt;h3 id=&quot;Virtual-Address-Concept&quot;&gt;&lt;a href=&quot;#Virtual-Address-Concept&quot; class=&quot;headerlink&quot; title=&quot;Virtual Address Concept&quot;&gt;&lt;/a&gt;Virtual Address Concept&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;Protect processes from on another&lt;/li&gt;
@@ -612,7 +612,9 @@
       <category term="Operating Systems" scheme="http://zhaot777.github.io/categories/Operating-Systems/"/>
     
     
-      <category term="OS, virtual memory" scheme="http://zhaot777.github.io/tags/OS-virtual-memory/"/>
+      <category term="OS" scheme="http://zhaot777.github.io/tags/OS/"/>
+    
+      <category term="virtual memory" scheme="http://zhaot777.github.io/tags/virtual-memory/"/>
     
   </entry>
   
@@ -844,7 +846,7 @@
     <link href="http://zhaot777.github.io/2016/03/01/webcrawler/"/>
     <id>http://zhaot777.github.io/2016/03/01/webcrawler/</id>
     <published>2016-03-01T11:16:42.366Z</published>
-    <updated>2016-03-03T08:51:12.588Z</updated>
+    <updated>2016-06-20T00:02:00.523Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;blockquote&gt;
 &lt;font size=&quot;2&quot;&gt;&lt;p&gt;A &lt;strong&gt;Web crawler&lt;/strong&gt; starts with a list of URLs to visit, called the seeds. As the crawler visits these URLs, it identifies all the hyperlinks in the page and adds them to the list of URLs to visit, called the crawl frontier. URLs from the frontier are recursively visited according to a set of policies. If the crawler is performing archiving of websites it copies and saves the information as it goes. The archives are usually stored in such a way they can be viewed, read and navigated as they were on the live web, but are preserved as ‘snapshots’.- &lt;a href=&quot;https://en.wikipedia.org/wiki/Web_crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wikipedia&lt;/a&gt;&lt;/p&gt;&lt;/font&gt;
@@ -882,6 +884,8 @@
     
       <category term="Python" scheme="http://zhaot777.github.io/tags/Python/"/>
     
+      <category term="Web Crawler" scheme="http://zhaot777.github.io/tags/Web-Crawler/"/>
+    
   </entry>
   
   <entry>
@@ -889,7 +893,7 @@
     <link href="http://zhaot777.github.io/2016/02/21/percolation/"/>
     <id>http://zhaot777.github.io/2016/02/21/percolation/</id>
     <published>2016-02-21T17:25:41.383Z</published>
-    <updated>2016-03-03T08:51:01.711Z</updated>
+    <updated>2016-06-20T00:01:14.350Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;blockquote&gt;
 &lt;font size=&quot;2&quot;&gt;In statistical physics and mathematics, percolation theory describes the behavior of connected clusters in a random graph. The applications of percolation theory to materials science and other domains are discussed in the article percolation. - &lt;a href=&quot;https://en.wikipedia.org/wiki/Percolation_theory&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wikipedia&lt;/a&gt;&lt;/font&gt;
@@ -958,6 +962,8 @@
     
     
       <category term="union-find" scheme="http://zhaot777.github.io/tags/union-find/"/>
+    
+      <category term="Algorithms" scheme="http://zhaot777.github.io/tags/Algorithms/"/>
     
   </entry>
   
