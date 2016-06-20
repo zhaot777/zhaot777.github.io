@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://zhaot777.github.io/2016/06/19/DB_Normalization/index.html">
 <meta property="og:site_name" content="Steven's Blog">
 <meta property="og:description" content="Basic concept of Database Normalization, normal forms and how to implement each forms.">
-<meta property="og:updated_time" content="2016-06-19T23:57:15.025Z">
+<meta property="og:updated_time" content="2016-06-20T00:09:55.295Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DB Normalization Review">
 <meta name="twitter:description" content="Basic concept of Database Normalization, normal forms and how to implement each forms.">
@@ -315,11 +315,9 @@
       
         <h3 id="What-is-normalization-and-what-role-it-plays-in-the-DB-design-process"><a href="#What-is-normalization-and-what-role-it-plays-in-the-DB-design-process" class="headerlink" title="What is normalization and what role it plays in the DB design process"></a>What is normalization and what role it plays in the DB design process</h3><ol>
 <li>Evaluating and correcting table structures to minimize data redundancies</li>
-</ol>
-<ul>
 <li>Reduces data anomalies</li>
 <li>Higher normal forms are better than lower normals forms and result in cleaner designs</li>
-<li>Properly designed 3NF structures meet the requirement of 4NF</li>
+<li>Properly designed 3NF structures meet the requirement of 4N</li>
 <li>Normalization is a design step: Used to design a new DB structure or to improve the existing data structure </li>
 <li>Normalization Goal<ul>
 <li>Each table represents a single subject</li>
@@ -328,7 +326,7 @@
 <li>Each table is void of insertion, update and deletion anomalies</li>
 </ul>
 </li>
-</ul>
+</ol>
 <h3 id="Normal-Forms"><a href="#Normal-Forms" class="headerlink" title="Normal Forms"></a>Normal Forms</h3><ol>
 <li>Characteristic<ul>
 <li>1NF: Table format, no repeating groups, PK identified</li>
@@ -337,8 +335,6 @@
 <li>4NF: 3NF and no independent multivalued dependencies</li>
 </ul>
 </li>
-</ol>
-<ul>
 <li>Process<ul>
 <li>Work on one relation at a time</li>
 <li>Identifying the dependencies of a relation</li>
@@ -362,7 +358,7 @@
 <li>Solution: try to change the primary key and separate one relation to two</li>
 </ul>
 </li>
-</ul>
+</ol>
 <h3 id="Denormalization"><a href="#Denormalization" class="headerlink" title="Denormalization"></a>Denormalization</h3><ul>
 <li>Produces a lower normal form and increased performance and greater data redundancy</li>
 </ul>

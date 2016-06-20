@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhaot777.github.io/"/>
-  <updated>2016-06-19T23:59:22.406Z</updated>
+  <updated>2016-06-20T00:11:49.432Z</updated>
   <id>http://zhaot777.github.io/</id>
   
   <author>
@@ -20,12 +20,10 @@
     <link href="http://zhaot777.github.io/2016/06/19/DB_BigData/"/>
     <id>http://zhaot777.github.io/2016/06/19/DB_BigData/</id>
     <published>2016-06-19T23:37:11.872Z</published>
-    <updated>2016-06-19T23:59:22.406Z</updated>
+    <updated>2016-06-20T00:11:49.432Z</updated>
     
     <content type="html">&lt;h3 id=&quot;What-is-Big-Data&quot;&gt;&lt;a href=&quot;#What-is-Big-Data&quot; class=&quot;headerlink&quot; title=&quot;What is Big Data&quot;&gt;&lt;/a&gt;What is Big Data&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Big Data is data that is ‘too big’ to be stored in a single machine, and/or processed by a single machine.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;Feature: Variety, Velocity, Volume&lt;ul&gt;
 &lt;li&gt;Encompasses large amount of information&lt;/li&gt;
 &lt;li&gt;Consists of a variety of data types and formats&lt;/li&gt;
@@ -45,21 +43,19 @@
 &lt;li&gt;Standards&lt;/li&gt;
 &lt;li&gt;Sampling&lt;/li&gt;
 &lt;li&gt;Utilization&lt;/li&gt;
-&lt;li&gt;Too much data&lt;ul&gt;
-&lt;li&gt;Benefit of Big Data&lt;/li&gt;
+&lt;li&gt;Too much data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Benefit of Big Data&lt;ul&gt;
 &lt;li&gt;Combine multiple sources of data&lt;/li&gt;
 &lt;li&gt;Exploit unstructured data&lt;/li&gt;
 &lt;li&gt;Provide insights &lt;/li&gt;
 &lt;li&gt;Quicker action&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;h3 id=&quot;What-is-Data-Science&quot;&gt;&lt;a href=&quot;#What-is-Data-Science&quot; class=&quot;headerlink&quot; title=&quot;What is Data Science&quot;&gt;&lt;/a&gt;What is Data Science&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Math, Algorithms, Coding, Subject matter&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;Concentration areas:&lt;ul&gt;
 &lt;li&gt;Spatial analysis&lt;/li&gt;
 &lt;li&gt;text mining&lt;/li&gt;
@@ -100,7 +96,7 @@
 &lt;li&gt;Visualizing – Qlikview, Tableau, periscope.io&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 </content>
     
     <summary type="html">
@@ -114,9 +110,9 @@
     
       <category term="Database" scheme="http://zhaot777.github.io/tags/Database/"/>
     
-      <category term="Curriculum Review" scheme="http://zhaot777.github.io/tags/Curriculum-Review/"/>
-    
       <category term="Big Data" scheme="http://zhaot777.github.io/tags/Big-Data/"/>
+    
+      <category term="Curriculum Review" scheme="http://zhaot777.github.io/tags/Curriculum-Review/"/>
     
   </entry>
   
@@ -125,7 +121,7 @@
     <link href="http://zhaot777.github.io/2016/06/19/DB_NoSQL/"/>
     <id>http://zhaot777.github.io/2016/06/19/DB_NoSQL/</id>
     <published>2016-06-19T23:37:11.871Z</published>
-    <updated>2016-06-19T23:58:29.183Z</updated>
+    <updated>2016-06-20T00:08:58.710Z</updated>
     
     <content type="html">&lt;h3 id=&quot;What-is-NoSQL&quot;&gt;&lt;a href=&quot;#What-is-NoSQL&quot; class=&quot;headerlink&quot; title=&quot;What is NoSQL&quot;&gt;&lt;/a&gt;What is NoSQL&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Need for NoSQL&lt;ul&gt;
@@ -135,8 +131,6 @@
 &lt;li&gt;Hard to keep up performance&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;Feature: flexible, schema-less, efficient &amp;amp; fast, available, scalable&lt;/li&gt;
 &lt;li&gt;JSON: a set of key-value pairs&lt;/li&gt;
 &lt;li&gt;‘BASE’ property&lt;ul&gt;
@@ -146,11 +140,9 @@
 &lt;li&gt;Easier evolution&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;h3 id=&quot;NoSQL-DBs&quot;&gt;&lt;a href=&quot;#NoSQL-DBs&quot; class=&quot;headerlink&quot; title=&quot;NoSQL DBs&quot;&gt;&lt;/a&gt;NoSQL DBs&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Types: Key-value store, Column-family store, Document store, Graph store&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;Standard way to compare NoSQL DBs: Architecture, administration, deployment, development, performance &amp;amp; scalability&lt;/li&gt;
 &lt;li&gt;Polyglot persistence: use different storage technologies to store different parts of a single application and tied together by the application, using DB APIs or web services APIs.&lt;/li&gt;
 &lt;li&gt;NoSQL benefit&lt;ul&gt;
@@ -189,7 +181,7 @@
 &lt;li&gt;Architecture mode: in-memory, native store, non-native store(use third-party service)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 </content>
     
     <summary type="html">
@@ -203,9 +195,9 @@
     
       <category term="Database" scheme="http://zhaot777.github.io/tags/Database/"/>
     
-      <category term="NoSQL" scheme="http://zhaot777.github.io/tags/NoSQL/"/>
-    
       <category term="Curriculum Review" scheme="http://zhaot777.github.io/tags/Curriculum-Review/"/>
+    
+      <category term="NoSQL" scheme="http://zhaot777.github.io/tags/NoSQL/"/>
     
   </entry>
   
@@ -214,12 +206,10 @@
     <link href="http://zhaot777.github.io/2016/06/19/DB_PerformanceTuning/"/>
     <id>http://zhaot777.github.io/2016/06/19/DB_PerformanceTuning/</id>
     <published>2016-06-19T23:37:11.870Z</published>
-    <updated>2016-06-19T23:58:44.721Z</updated>
+    <updated>2016-06-20T00:08:00.233Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Performance-Tuning-concepts&quot;&gt;&lt;a href=&quot;#Performance-Tuning-concepts&quot; class=&quot;headerlink&quot; title=&quot;Performance-Tuning concepts&quot;&gt;&lt;/a&gt;Performance-Tuning concepts&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Set of activities and procedures that reduce response time of database system- Fine -tuning the performance of a system requires that all factors must operate at optimum level with minimal bottlenecks&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;All data in a database are stored in data files, and logical grouped similar characteristics data in file groups or table spaces&lt;/li&gt;
 &lt;li&gt;Data cache or buffer cache: stores most recently accessed data blocks in RAM&lt;/li&gt;
 &lt;li&gt;SQL cache or procedure cache: Stores most recently executed SQL statements or PL/SQL procedures&lt;/li&gt;
@@ -227,7 +217,7 @@
 &lt;li&gt;Automatic query optimization &amp;amp; Manual query optimization&lt;/li&gt;
 &lt;li&gt;Static query optimization &amp;amp; Dynamic query optimization&lt;/li&gt;
 &lt;li&gt;Statistically based query optimization algorithm &amp;amp; Rule-based query optimization algorithm&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;h3 id=&quot;DBMS-processes-SQL-queries&quot;&gt;&lt;a href=&quot;#DBMS-processes-SQL-queries&quot; class=&quot;headerlink&quot; title=&quot;DBMS processes SQL queries&quot;&gt;&lt;/a&gt;DBMS processes SQL queries&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Query Processing:&lt;ul&gt;
 &lt;li&gt;Parsing: Query Optimizer chooses the most efficient access plan&lt;/li&gt;
@@ -236,8 +226,6 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Help speed up data access&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;Data sparsity: number of different values a cloumn could have. low sparsity make index might be useless&lt;/li&gt;
 &lt;li&gt;Data structures used to implement indexed:&lt;ul&gt;
 &lt;li&gt;Hash indexed&lt;/li&gt;
@@ -250,23 +238,17 @@
 &lt;li&gt;Function-based index&lt;h3 id=&quot;Query-Optimizer&quot;&gt;&lt;a href=&quot;#Query-Optimizer&quot; class=&quot;headerlink&quot; title=&quot;Query Optimizer&quot;&gt;&lt;/a&gt;Query Optimizer&lt;/h3&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
 &lt;li&gt;Optimizer Choices&lt;ul&gt;
 &lt;li&gt;Rule-based optimizer &lt;/li&gt;
 &lt;li&gt;Cost-based optimizer&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;Optimizer hints: special instructions for the optimizer, embedded in the SQL command text&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;h3 id=&quot;Formulate-Queries-and-tune-the-DBMS-for-optimal-performance&quot;&gt;&lt;a href=&quot;#Formulate-Queries-and-tune-the-DBMS-for-optimal-performance&quot; class=&quot;headerlink&quot; title=&quot;Formulate Queries and tune the DBMS for optimal performance&quot;&gt;&lt;/a&gt;Formulate Queries and tune the DBMS for optimal performance&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Find a good way to construct a SQL query&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;Using RAID(Redundant Array of Independent Disks)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 </content>
     
     <summary type="html">
@@ -289,12 +271,10 @@
     <link href="http://zhaot777.github.io/2016/06/19/DB_Transaction/"/>
     <id>http://zhaot777.github.io/2016/06/19/DB_Transaction/</id>
     <published>2016-06-19T23:37:11.868Z</published>
-    <updated>2016-06-19T23:59:04.700Z</updated>
+    <updated>2016-06-20T00:10:49.493Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Database-Transactions&quot;&gt;&lt;a href=&quot;#Database-Transactions&quot; class=&quot;headerlink&quot; title=&quot;Database Transactions&quot;&gt;&lt;/a&gt;Database Transactions&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Logical unit of work that must be entirely completed or aborted&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;Consistent database state: all data integrity constraints are satisfied&lt;/li&gt;
 &lt;li&gt;Formed by two or more database requests, and it should equivalent of a single SQL statement in an application program or transaction&lt;/li&gt;
 &lt;li&gt;ACID&lt;ul&gt;
@@ -316,11 +296,9 @@
 &lt;li&gt;A system failure&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;h3 id=&quot;Concurrency-control&quot;&gt;&lt;a href=&quot;#Concurrency-control&quot; class=&quot;headerlink&quot; title=&quot;Concurrency control&quot;&gt;&lt;/a&gt;Concurrency control&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Ensure serializability of transactions in a multiuser database environment&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;Problems &lt;ul&gt;
 &lt;li&gt;Lost update: update same data&lt;/li&gt;
 &lt;li&gt;Uncommitted data: one accessed uncommitted data, the other one rolled back&lt;/li&gt;
@@ -360,7 +338,7 @@
 &lt;li&gt;Use data resources without acquiring locks on those resources&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 </content>
     
     <summary type="html">
@@ -383,15 +361,13 @@
     <link href="http://zhaot777.github.io/2016/06/19/DB_Normalization/"/>
     <id>http://zhaot777.github.io/2016/06/19/DB_Normalization/</id>
     <published>2016-06-19T23:37:11.865Z</published>
-    <updated>2016-06-19T23:57:15.025Z</updated>
+    <updated>2016-06-20T00:09:55.295Z</updated>
     
     <content type="html">&lt;h3 id=&quot;What-is-normalization-and-what-role-it-plays-in-the-DB-design-process&quot;&gt;&lt;a href=&quot;#What-is-normalization-and-what-role-it-plays-in-the-DB-design-process&quot; class=&quot;headerlink&quot; title=&quot;What is normalization and what role it plays in the DB design process&quot;&gt;&lt;/a&gt;What is normalization and what role it plays in the DB design process&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Evaluating and correcting table structures to minimize data redundancies&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;Reduces data anomalies&lt;/li&gt;
 &lt;li&gt;Higher normal forms are better than lower normals forms and result in cleaner designs&lt;/li&gt;
-&lt;li&gt;Properly designed 3NF structures meet the requirement of 4NF&lt;/li&gt;
+&lt;li&gt;Properly designed 3NF structures meet the requirement of 4N&lt;/li&gt;
 &lt;li&gt;Normalization is a design step: Used to design a new DB structure or to improve the existing data structure &lt;/li&gt;
 &lt;li&gt;Normalization Goal&lt;ul&gt;
 &lt;li&gt;Each table represents a single subject&lt;/li&gt;
@@ -400,7 +376,7 @@
 &lt;li&gt;Each table is void of insertion, update and deletion anomalies&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;h3 id=&quot;Normal-Forms&quot;&gt;&lt;a href=&quot;#Normal-Forms&quot; class=&quot;headerlink&quot; title=&quot;Normal Forms&quot;&gt;&lt;/a&gt;Normal Forms&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Characteristic&lt;ul&gt;
 &lt;li&gt;1NF: Table format, no repeating groups, PK identified&lt;/li&gt;
@@ -409,8 +385,6 @@
 &lt;li&gt;4NF: 3NF and no independent multivalued dependencies&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
 &lt;li&gt;Process&lt;ul&gt;
 &lt;li&gt;Work on one relation at a time&lt;/li&gt;
 &lt;li&gt;Identifying the dependencies of a relation&lt;/li&gt;
@@ -434,7 +408,7 @@
 &lt;li&gt;Solution: try to change the primary key and separate one relation to two&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;h3 id=&quot;Denormalization&quot;&gt;&lt;a href=&quot;#Denormalization&quot; class=&quot;headerlink&quot; title=&quot;Denormalization&quot;&gt;&lt;/a&gt;Denormalization&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;Produces a lower normal form and increased performance and greater data redundancy&lt;/li&gt;
 &lt;/ul&gt;

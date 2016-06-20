@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://zhaot777.github.io/2016/06/19/DB_PerformanceTuning/index.html">
 <meta property="og:site_name" content="Steven's Blog">
 <meta property="og:description" content="Performance-Tuning concepts, how DBMS processes SQL queries, and different way to tuning performance.">
-<meta property="og:updated_time" content="2016-06-19T23:58:44.721Z">
+<meta property="og:updated_time" content="2016-06-20T00:08:00.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Database Performance-Tuning Review">
 <meta name="twitter:description" content="Performance-Tuning concepts, how DBMS processes SQL queries, and different way to tuning performance.">
@@ -315,8 +315,6 @@
       
         <h3 id="Performance-Tuning-concepts"><a href="#Performance-Tuning-concepts" class="headerlink" title="Performance-Tuning concepts"></a>Performance-Tuning concepts</h3><ol>
 <li>Set of activities and procedures that reduce response time of database system- Fine -tuning the performance of a system requires that all factors must operate at optimum level with minimal bottlenecks</li>
-</ol>
-<ul>
 <li>All data in a database are stored in data files, and logical grouped similar characteristics data in file groups or table spaces</li>
 <li>Data cache or buffer cache: stores most recently accessed data blocks in RAM</li>
 <li>SQL cache or procedure cache: Stores most recently executed SQL statements or PL/SQL procedures</li>
@@ -324,7 +322,7 @@
 <li>Automatic query optimization &amp; Manual query optimization</li>
 <li>Static query optimization &amp; Dynamic query optimization</li>
 <li>Statistically based query optimization algorithm &amp; Rule-based query optimization algorithm</li>
-</ul>
+</ol>
 <h3 id="DBMS-processes-SQL-queries"><a href="#DBMS-processes-SQL-queries" class="headerlink" title="DBMS processes SQL queries"></a>DBMS processes SQL queries</h3><ol>
 <li>Query Processing:<ul>
 <li>Parsing: Query Optimizer chooses the most efficient access plan</li>
@@ -333,8 +331,6 @@
 </ul>
 </li>
 <li>Help speed up data access</li>
-</ol>
-<ul>
 <li>Data sparsity: number of different values a cloumn could have. low sparsity make index might be useless</li>
 <li>Data structures used to implement indexed:<ul>
 <li>Hash indexed</li>
@@ -347,23 +343,17 @@
 <li>Function-based index<h3 id="Query-Optimizer"><a href="#Query-Optimizer" class="headerlink" title="Query Optimizer"></a>Query Optimizer</h3></li>
 </ul>
 </li>
-</ul>
-<ol>
 <li>Optimizer Choices<ul>
 <li>Rule-based optimizer </li>
 <li>Cost-based optimizer</li>
 </ul>
 </li>
-</ol>
-<ul>
 <li>Optimizer hints: special instructions for the optimizer, embedded in the SQL command text</li>
-</ul>
+</ol>
 <h3 id="Formulate-Queries-and-tune-the-DBMS-for-optimal-performance"><a href="#Formulate-Queries-and-tune-the-DBMS-for-optimal-performance" class="headerlink" title="Formulate Queries and tune the DBMS for optimal performance"></a>Formulate Queries and tune the DBMS for optimal performance</h3><ol>
 <li>Find a good way to construct a SQL query</li>
-</ol>
-<ul>
 <li>Using RAID(Redundant Array of Independent Disks)</li>
-</ul>
+</ol>
 
       
     </div>

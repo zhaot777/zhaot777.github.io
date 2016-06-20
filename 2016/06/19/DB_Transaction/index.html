@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://zhaot777.github.io/2016/06/19/DB_Transaction/index.html">
 <meta property="og:site_name" content="Steven's Blog">
 <meta property="og:description" content="Transactions, and different Concurrency control approach.">
-<meta property="og:updated_time" content="2016-06-19T23:59:04.700Z">
+<meta property="og:updated_time" content="2016-06-20T00:10:49.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Database Transaction Review">
 <meta name="twitter:description" content="Transactions, and different Concurrency control approach.">
@@ -315,8 +315,6 @@
       
         <h3 id="Database-Transactions"><a href="#Database-Transactions" class="headerlink" title="Database Transactions"></a>Database Transactions</h3><ol>
 <li>Logical unit of work that must be entirely completed or aborted</li>
-</ol>
-<ul>
 <li>Consistent database state: all data integrity constraints are satisfied</li>
 <li>Formed by two or more database requests, and it should equivalent of a single SQL statement in an application program or transaction</li>
 <li>ACID<ul>
@@ -338,11 +336,9 @@
 <li>A system failure</li>
 </ul>
 </li>
-</ul>
+</ol>
 <h3 id="Concurrency-control"><a href="#Concurrency-control" class="headerlink" title="Concurrency control"></a>Concurrency control</h3><ol>
 <li>Ensure serializability of transactions in a multiuser database environment</li>
-</ol>
-<ul>
 <li>Problems <ul>
 <li>Lost update: update same data</li>
 <li>Uncommitted data: one accessed uncommitted data, the other one rolled back</li>
@@ -382,7 +378,7 @@
 <li>Use data resources without acquiring locks on those resources</li>
 </ul>
 </li>
-</ul>
+</ol>
 
       
     </div>
